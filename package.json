@@ -1,0 +1,13 @@
+{
+  "name": "hotwifeclub",
+  "version": "1.0.0",
+  "description": "The premier visual community celebrating the hotwife lifestyle",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}
