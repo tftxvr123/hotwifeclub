@@ -1,0 +1,2053 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>THE HOTWIFE CLUB — Curiosity. Confidence. Community.</title>
+  <meta name="description" content="A sophisticated, consent-first adult lifestyle social community. Powered by The Hotwife Facts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       THE HOTWIFE CLUB — DESIGN SYSTEM
+       ========================================================================== */
+    :root {
+      --bg-base: #08080a;
+      --bg-surface: #101015;
+      --bg-card: #16161f;
+      --bg-card-hover: #1e1e2b;
+      --border-subtle: #262635;
+      --border-focus: #ff2a85;
+      
+      --neon-pink: #ff2a85;
+      --neon-pink-glow: rgba(255, 42, 133, 0.25);
+      --electric-purple: #9d4edd;
+      --electric-purple-glow: rgba(157, 78, 221, 0.25);
+      
+      --text-main: #f4f4f7;
+      --text-muted: #9494a8;
+      --text-faint: #5d5d72;
+      --danger: #ef4444;
+      --success: #10b981;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.45);
+      --shadow-glow: 0 0 20px var(--neon-pink-glow);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: 76px; /* Room for mobile nav */
+    }
+
+    @media (min-width: 900px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    input, textarea, select { font-family: inherit; color: inherit; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-base); }
+    ::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--electric-purple); }
+
+    /* ==========================================================================
+       UTILITY CLASSES & COMPONENTS
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .badge-18 {
+      background: linear-gradient(135deg, var(--neon-pink), #c026d3);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 0 10px var(--neon-pink-glow);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--neon-pink), #e11d48);
+      color: white;
+      box-shadow: 0 4px 14px var(--neon-pink-glow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255, 42, 133, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--electric-purple);
+    }
+
+    .btn-outline-pink {
+      border: 1px solid var(--neon-pink);
+      color: var(--neon-pink);
+    }
+    .btn-outline-pink:hover {
+      background: var(--neon-pink-glow);
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 0.8rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      transition: border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: rgba(157, 78, 221, 0.4);
+    }
+
+    /* ==========================================================================
+       NAVIGATION & HEADER
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 8, 10, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      background: linear-gradient(135deg, #ffffff 40%, var(--neon-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .desktop-nav { display: flex; }
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--neon-pink);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Mobile Bottom Navigation Bar */
+    .mobile-bottom-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 66px;
+      background: rgba(14, 14, 18, 0.96);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-subtle);
+      z-index: 100;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .mobile-bottom-nav { display: none; }
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.68rem;
+      font-weight: 600;
+      gap: 4px;
+      flex: 1;
+      height: 100%;
+    }
+
+    .mobile-nav-item.active {
+      color: var(--neon-pink);
+    }
+
+    .mobile-create-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--neon-pink), var(--electric-purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      margin-top: -14px;
+      box-shadow: 0 4px 14px var(--neon-pink-glow);
+    }
+
+    /* ==========================================================================
+       MODALS & OVERLAYS
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 480px;
+      padding: 26px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* Age Gate Specifics */
+    .age-gate-icon {
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       MAIN VIEWS ARCHITECTURE
+       ========================================================================== */
+    .view-section {
+      display: none;
+      animation: fadeIn 0.25s ease-out forwards;
+      padding: 24px 0 48px;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       HERO & HOMEPAGE
+       ========================================================================== */
+    .hero {
+      text-align: center;
+      padding: 50px 16px 40px;
+      position: relative;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 42, 133, 0.1);
+      border: 1px solid rgba(255, 42, 133, 0.25);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      color: var(--neon-pink);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--neon-pink), var(--electric-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    /* Live Platform Metrics Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin: 32px 0 44px;
+    }
+
+    .stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* Feed Filters & Layout */
+    .feed-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 990px) {
+      .feed-layout {
+        grid-template-columns: 1fr 340px;
+      }
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+      scrollbar-width: none;
+    }
+
+    .tab-btn {
+      padding: 8px 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--neon-pink);
+      color: #fff;
+      border-color: var(--neon-pink);
+    }
+
+    /* Post Card */
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #374151, #1f2937);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.88rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .author-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .post-room-tag {
+      font-size: 0.74rem;
+      color: var(--electric-purple);
+      font-weight: 600;
+    }
+
+    .post-content {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .post-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 12px;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 14px;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .action-btn:hover { color: var(--text-main); }
+    .action-btn.liked { color: var(--neon-pink); }
+    .action-btn.saved { color: var(--electric-purple); }
+
+    /* Confessions Card */
+    .confession-card {
+      background: linear-gradient(180deg, #181523 0%, var(--bg-card) 100%);
+      border: 1px solid #36284f;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .confession-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #c084fc;
+      background: rgba(147, 51, 234, 0.15);
+      border: 1px solid rgba(147, 51, 234, 0.3);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* Rooms Grid */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .room-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 200px;
+      transition: all 0.2s ease;
+    }
+
+    .room-card:hover {
+      border-color: var(--neon-pink);
+      transform: translateY(-2px);
+    }
+
+    .room-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .room-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    /* Daily Poll Component */
+    .poll-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+
+    .poll-option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 16px;
+      margin-top: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+
+    .poll-option-btn:hover:not(:disabled) {
+      border-color: var(--neon-pink);
+    }
+
+    .poll-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(255, 42, 133, 0.22);
+      z-index: 1;
+      transition: width 0.4s ease;
+    }
+
+    .poll-text, .poll-pct {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Compatibility Quiz */
+    .quiz-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .quiz-option {
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      border-color: var(--electric-purple);
+      background: var(--bg-card-hover);
+    }
+
+    /* Comments Section */
+    .comments-drawer {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      display: none;
+    }
+
+    .comment-item {
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      background: var(--bg-surface);
+      border-radius: var(--radius-sm);
+    }
+
+    .comment-author {
+      font-weight: 700;
+      color: var(--electric-purple);
+      margin-right: 6px;
+    }
+
+    /* Admin Table */
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    .admin-table th, .admin-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+    }
+
+    .admin-table th {
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 84px;
+      right: 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--neon-pink);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-glow);
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 300;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: #060608;
+    }
+
+    .footer-powered {
+      color: var(--neon-pink);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       18+ AGE GATE OVERLAY (Strict Consent & Compliance Workflow)
+       ======================================================================== -->
+  <div id="ageGateModal" class="modal-overlay">
+    <div class="modal-card" style="text-align: center;">
+      <div class="age-gate-icon">🔒</div>
+      <div class="badge-18" style="margin-bottom: 10px;">18+ RESTRICTED ACCESS</div>
+      <h2 class="modal-title">Adult Lifestyle Community</h2>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px;">
+        <strong>THE HOTWIFE CLUB</strong> is an adult social network for relationship discussions, curiosity, and confidence. This is not a hookup or casual dating service.
+      </p>
+      
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 14px; text-align: left; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px;">
+        <p style="margin-bottom: 6px;">• You must be at least 18 years old (or legal adult age in your jurisdiction).</p>
+        <p style="margin-bottom: 6px;">• You agree to treat all members with respect and active consent.</p>
+        <p>• Zero tolerance for non-consensual content, harassment, or doxxing.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button id="btnAcceptAge" class="btn btn-primary" style="width: 100%;">
+          I Am 18+ — Enter The Club
+        </button>
+        <button id="btnDeclineAge" class="btn btn-secondary" style="width: 100%;">
+          Exit Platform
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       APPLICATION HEADER (Desktop & Mobile Brand Treatment)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-logo" onclick="app.navigate('home')">
+        <span class="badge-18">18+</span>
+        <span class="brand-title">THE HOTWIFE CLUB</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#home" class="nav-link" data-view="home" onclick="app.navigate('home')">Home</a>
+        <a href="#feed" class="nav-link" data-view="feed" onclick="app.navigate('feed')">Club Feed</a>
+        <a href="#confessions" class="nav-link" data-view="confessions" onclick="app.navigate('confessions')">Confessions</a>
+        <a href="#rooms" class="nav-link" data-view="rooms" onclick="app.navigate('rooms')">Club Rooms</a>
+        <a href="#daily" class="nav-link" data-view="daily" onclick="app.navigate('daily')">Daily Question</a>
+        <a href="#quiz" class="nav-link" data-view="quiz" onclick="app.navigate('quiz')">Quiz</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="btnCreateHeader" class="btn btn-primary btn-sm" style="display: none;" onclick="app.openModal('createModal')">
+          + Post
+        </button>
+        <button id="btnAuthHeader" class="btn btn-secondary btn-sm" onclick="app.toggleAuthModal()">
+          Sign In
+        </button>
+        <button id="btnAdminBadge" class="btn btn-outline-pink btn-sm" style="display:none;" onclick="app.navigate('admin')">
+          🛡️ Admin
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN APP VIEWS
+       ======================================================================== -->
+  <main class="container">
+
+    <!-- VIEW 1: HOMEPAGE -->
+    <section id="view-home" class="view-section active">
+      <div class="hero">
+        <div class="hero-tag">
+          <span>Powered by @thehotwifefacts</span>
+        </div>
+        <h1 class="hero-title">
+          Curiosity. Confidence.<br><span>Community.</span>
+        </h1>
+        <p class="hero-subtitle">
+          A discreet, premier adult lifestyle community for consenting couples and women exploring the lifestyle on their terms.
+        </p>
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" onclick="app.checkAuthAndDo(() => app.navigate('feed'))">
+            Explore Community Feed
+          </button>
+          <button class="btn btn-secondary" onclick="app.navigate('rooms')">
+            Browse 6 Club Rooms
+          </button>
+          <button class="btn btn-outline-pink" onclick="app.navigate('quiz')">
+            Take Compatibility Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Real Dynamic Platform Stats -->
+      <div class="stats-bar" id="statsContainer">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Featured Sections on Home -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 10px;">
+        
+        <!-- Daily Poll Teaser -->
+        <div class="card" id="homePollTeaser">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="color: var(--neon-pink); font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Today's Featured Question</span>
+            <span class="badge-18" style="font-size: 0.65rem;">Active Poll</span>
+          </div>
+          <h3 id="homePollTitle" style="font-size: 1.05rem; margin-bottom: 14px;">Loading daily discussion...</h3>
+          <button class="btn btn-primary btn-sm" onclick="app.navigate('daily')" style="width: 100%;">
+            Vote & View Results
+          </button>
+        </div>
+
+        <!-- Anonymous Confession Teaser -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="color: var(--electric-purple); font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Discreet Confessions</span>
+            <span>🎭</span>
+          </div>
+          <h3 style="font-size: 1.05rem; margin-bottom: 8px;">Honest stories, real feelings.</h3>
+          <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 14px;">
+            Share your experiences, fantasies, and relationship milestones with complete pseudonym protection.
+          </p>
+          <button class="btn btn-secondary btn-sm" onclick="app.navigate('confessions')" style="width: 100%;">
+            Read Confessions
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 2: COMMUNITY FEED -->
+    <section id="view-feed" class="view-section">
+      <div class="feed-layout">
+        <div>
+          <!-- Feed Category Filters -->
+          <div class="filter-tabs">
+            <button class="tab-btn active" onclick="app.setFeedFilter('all', this)">All Feeds</button>
+            <button class="tab-btn" onclick="app.setFeedFilter('trending', this)">🔥 Trending</button>
+            <button class="tab-btn" onclick="app.setFeedFilter('latest', this)">✨ Latest</button>
+            <button class="tab-btn" onclick="app.setFeedFilter('popular', this)">❤️ Most Loved</button>
+            <button class="tab-btn" onclick="app.setFeedFilter('saved', this)">🔖 Saved</button>
+          </div>
+
+          <!-- Feed Posts Render Container -->
+          <div id="postsFeedContainer">
+            <!-- Dynamic Post Cards -->
+          </div>
+        </div>
+
+        <!-- Sidebar (Desktop guidelines & Quick Rooms) -->
+        <aside style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="card">
+            <h4 style="font-size: 0.95rem; margin-bottom: 8px; color: var(--neon-pink);">Community Rules</h4>
+            <ul style="font-size: 0.82rem; color: var(--text-muted); list-style: inside disc; line-height: 1.6;">
+              <li>Strictly consensual adult lifestyle discussions.</li>
+              <li>No solicitations or direct meetup arrangements.</li>
+              <li>Respect personal boundaries and privacy.</li>
+              <li>No non-consensual content or abuse.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4 style="font-size: 0.95rem; margin-bottom: 10px;">Quick Rooms</h4>
+            <div id="sidebarRoomsList" style="display: flex; flex-direction: column; gap: 8px;">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- VIEW 3: ANONYMOUS CONFESSIONS -->
+    <section id="view-confessions" class="view-section">
+      <div style="max-width: 720px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <h2 style="font-size: 1.8rem; font-weight: 800;">Discreet Confessions</h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Real thoughts, fantasies, and experiences. Posted under safe pseudonyms.
+          </p>
+          <button class="btn btn-primary btn-sm" style="margin-top: 14px;" onclick="app.openModal('createModal', 'confession')">
+            + Submit Anonymous Confession
+          </button>
+        </div>
+
+        <div id="confessionsContainer">
+          <!-- Rendered Confession Cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: CLUB ROOMS (The 6 initial rooms) -->
+    <section id="view-rooms" class="view-section">
+      <div style="margin-bottom: 20px;">
+        <h2 style="font-size: 1.8rem; font-weight: 800;">Club Rooms</h2>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Specialized discussion spaces tailored to every stage of curiosity and lifestyle experience.
+        </p>
+      </div>
+
+      <div class="rooms-grid" id="clubRoomsGrid">
+        <!-- Rendered 6 Club Rooms -->
+      </div>
+    </section>
+
+    <!-- VIEW 5: DAILY HOTWIFE QUESTION -->
+    <section id="view-daily" class="view-section">
+      <div style="max-width: 680px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span class="badge-18" style="margin-bottom: 8px;">Featured Discussion</span>
+          <h2 style="font-size: 1.8rem; font-weight: 800;">Daily Hotwife Question</h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">One honest question every day. Vote once to see live community sentiment.</p>
+        </div>
+
+        <div class="poll-box" id="dailyPollCard">
+          <!-- Rendered Poll Box -->
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin: 32px 0 16px;">Previous Questions Archive</h3>
+        <div id="dailyArchiveContainer" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Archive questions -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 6: COUPLE COMPATIBILITY QUIZ -->
+    <section id="view-quiz" class="view-section">
+      <div class="quiz-card">
+        <div id="quizIntro">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 2.2rem;">✨</span>
+            <h2 style="font-size: 1.6rem; font-weight: 800; margin-top: 8px;">Couple Compatibility & Comfort Quiz</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">
+              A private questionnaire exploring relationship communication, lifestyle comfort levels, boundaries, and shared fantasies.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md); font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px;">
+            🔒 <strong>Discreet & Confidential:</strong> Answers are evaluated locally. Nothing is posted to your public profile without explicit permission.
+          </div>
+          <button class="btn btn-primary" style="width: 100%;" onclick="app.startQuiz()">
+            Begin Questionnaire
+          </button>
+        </div>
+
+        <div id="quizQuestions" style="display: none;">
+          <!-- Interactive Quiz Steps -->
+        </div>
+
+        <div id="quizResult" style="display: none; text-align: center;">
+          <!-- Result Summary -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 7: MEMBER PROFILE / SETTINGS -->
+    <section id="view-profile" class="view-section">
+      <div style="max-width: 680px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 20px;">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+            <div class="avatar" style="width: 64px; height: 64px; font-size: 1.5rem;" id="profileAvatar">U</div>
+            <div>
+              <h2 id="profileUsername" style="font-size: 1.3rem; font-weight: 800;">Guest</h2>
+              <span id="profileRoleTag" style="font-size: 0.78rem; color: var(--neon-pink); font-weight: 600;">Individual Member</span>
+            </div>
+          </div>
+          
+          <p id="profileBio" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+            Exploring lifestyle communication and consensual dynamic topics.
+          </p>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-secondary btn-sm" onclick="app.editBioPrompt()">Edit Bio</button>
+            <button class="btn btn-outline-pink btn-sm" onclick="app.toggleCoupleStatus()">Toggle Individual/Couple Mode</button>
+            <button class="btn btn-secondary btn-sm" style="color: var(--danger);" onclick="app.deleteAccountPrompt()">Delete Account Data</button>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Your Activity & Followed Rooms</h3>
+        <div id="profileRoomsActivity">
+          <!-- Live profile data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 8: ADMIN DASHBOARD (Role-gated) -->
+    <section id="view-admin" class="view-section">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div>
+          <h2 style="font-size: 1.8rem; font-weight: 800;">🛡️ Moderation & Safety Center</h2>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Review community reports, handle flags, and ensure platform safety standards.</p>
+        </div>
+      </div>
+
+      <div class="stats-bar" style="margin-bottom: 24px;">
+        <div class="stat-card">
+          <div class="stat-number" id="adminTotalReports">0</div>
+          <div class="stat-label">Pending Reports</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="adminResolvedCount">14</div>
+          <div class="stat-label">Resolved Flags</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Suspended Accounts</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Active Review Queue</h3>
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Content Snippet</th>
+                <th>Reason</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminReportsTableBody">
+              <!-- Rendered reported posts -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODALS
+       ======================================================================== -->
+
+  <!-- AUTH MODAL -->
+  <div id="authModal" class="modal-overlay">
+    <div class="modal-card">
+      <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted); font-size: 1.2rem;" onclick="app.closeModal('authModal')">✕</button>
+      <h3 class="modal-title" id="authTitle">Welcome to The Club</h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+        Enter your details to sign in or create an account. No real names or intrusive phone checks required.
+      </p>
+
+      <form id="authForm" onsubmit="app.handleAuthSubmit(event)">
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Club Pseudonym / Username</label>
+          <input type="text" id="authUsername" required placeholder="e.g. VelvetRose or CuriousPair" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Email Address</label>
+          <input type="email" id="authEmail" required placeholder="member@domain.com" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+        </div>
+        <div style="margin-bottom: 18px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Account Type</label>
+          <select id="authAccountType" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+            <option value="Individual">Individual Member (Curious / Wife)</option>
+            <option value="Couple">Couple Exploring Together</option>
+            <option value="Admin">Administrator (Demo Role)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Continue to Platform
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CREATE CONTENT MODAL (Feed Post / Confession) -->
+  <div id="createModal" class="modal-overlay">
+    <div class="modal-card">
+      <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted); font-size: 1.2rem;" onclick="app.closeModal('createModal')">✕</button>
+      <h3 class="modal-title" id="createModalTitle">Create Club Contribution</h3>
+      
+      <div style="display: flex; gap: 8px; margin: 12px 0 16px;">
+        <button id="typeBtnPost" class="tab-btn active" onclick="app.setCreateType('post')">Club Feed Post</button>
+        <button id="typeBtnConfession" class="tab-btn" onclick="app.setCreateType('confession')">Anonymous Confession</button>
+      </div>
+
+      <form id="createForm" onsubmit="app.handleCreateSubmit(event)">
+        <div id="roomSelectGroup" style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Target Club Room</label>
+          <select id="createRoomSelect" style="width: 100%; padding: 10px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+            <!-- Populated via JS -->
+          </select>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;" id="createTextLabel">Post Content</label>
+          <textarea id="createText" rows="4" required placeholder="Share your experience, thought or question respectfully..." style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Publish to Community
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION (Persistent Bar) -->
+  <nav class="mobile-bottom-nav">
+    <button class="mobile-nav-item active" data-view="home" onclick="app.navigate('home')">
+      <span style="font-size: 1.2rem;">🏠</span>
+      <span>Home</span>
+    </button>
+    <button class="mobile-nav-item" data-view="feed" onclick="app.navigate('feed')">
+      <span style="font-size: 1.2rem;">💬</span>
+      <span>Feed</span>
+    </button>
+    <button class="mobile-create-btn" onclick="app.checkAuthAndDo(() => app.openModal('createModal'))" title="Create">
+      +
+    </button>
+    <button class="mobile-nav-item" data-view="rooms" onclick="app.navigate('rooms')">
+      <span style="font-size: 1.2rem;">🏛️</span>
+      <span>Rooms</span>
+    </button>
+    <button class="mobile-nav-item" data-view="profile" onclick="app.checkAuthAndDo(() => app.navigate('profile'))">
+      <span style="font-size: 1.2rem;">👤</span>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastMessage" class="toast">Action completed</div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p style="font-weight: 800; color: #fff; margin-bottom: 6px;">THE HOTWIFE CLUB</p>
+      <p style="font-size: 0.82rem; margin-bottom: 12px;">Curiosity. Confidence. Community.</p>
+      <p style="font-size: 0.8rem; margin-bottom: 14px;">
+        <span class="footer-powered">Powered by The Hotwife Facts</span> (@thehotwifefacts)
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; font-size: 0.78rem; color: var(--text-muted); flex-wrap: wrap;">
+        <a href="#home" onclick="alert('Community Guidelines: Absolute consent, privacy protection, and harassment-free discussion.')">Guidelines</a>
+        <a href="#home" onclick="alert('Privacy Policy: All data is minimized. No public names or real identifiers are indexed.')">Discreet Privacy</a>
+        <a href="#home" onclick="alert('Safety: Moderation queue active 24/7. Reports processed swiftly.')">Safety & Moderation</a>
+      </div>
+      <p style="font-size: 0.72rem; color: var(--text-faint); margin-top: 18px;">
+        18+ Adults Only. Consensual adult relationship social community platform.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       APPLICATION LOGIC & DATABASE ENGINE (STORE + CONTROLLER)
+       ======================================================================== -->
+  <script>
+    /* Initial Seed Data */
+    const INITIAL_ROOMS = [
+      { id: "room-1", name: "Married & Curious", desc: "For women and partners taking their first cautious steps of discussion.", members: 1420, icon: "💍" },
+      { id: "room-2", name: "Hotwife Lifestyle", desc: "Discussions on living the lifestyle openly, navigating dynamics, and personal empowerment.", members: 2180, icon: "✨" },
+      { id: "room-3", name: "Couples Corner", desc: "Dedicated space for couples to share communication tips, boundary check-ins, and trust exercises.", members: 1890, icon: "🥂" },
+      { id: "room-4", name: "Experiences & Stories", desc: "Real milestone memories, respectful recaps, and emotional growth journeys.", members: 3100, icon: "📖" },
+      { id: "room-5", name: "Fantasy & Roleplay", desc: "Safe, imaginative discussions on fantasies, pillow talk, and psychological thrill.", members: 1640, icon: "🎭" },
+      { id: "room-6", name: "Relationship Discussions", desc: "Honest advice on communication, emotional honesty, and compersion.", members: 2450, icon: "💬" }
+    ];
+
+    const INITIAL_POSTS = [
+      {
+        id: "post-1",
+        author: "Aura_Wife",
+        roomId: "room-3",
+        roomName: "Couples Corner",
+        content: "The biggest realization we had after our first year of discussing this: deep communication isn't just a requirement beforehand, it's the most rewarding part of the entire journey. What is one rule you and your partner found essential?",
+        likes: 42,
+        liked: false,
+        saved: false,
+        comments: [
+          { author: "Mark_K", text: "Honesty about feelings immediately after. No holding back thoughts." },
+          { author: "S_Couple", text: "The right to pause any conversation whenever either person needs a breather." }
+        ],
+        timestamp: "2 hours ago"
+      },
+      {
+        id: "post-2",
+        author: "Elena_V",
+        roomId: "room-1",
+        roomName: "Married & Curious",
+        content: "Took our first evening out just enjoying a cocktail where my husband suggested I dress purely for myself and embrace flirtatious eye contact. Confidence boost was unlike anything else!",
+        likes: 89,
+        liked: false,
+        saved: false,
+        comments: [
+          { author: "Chloe_Lux", text: "Baby steps make the foundation so much stronger!" }
+        ],
+        timestamp: "5 hours ago"
+      }
+    ];
+
+    const INITIAL_CONFESSIONS = [
+      {
+        id: "conf-1",
+        pseudonym: "ShadowSilhouette",
+        text: "I used to feel guilty for even enjoying the thought of being desired by someone else while still unconditionally loving my husband. Finding out he felt turned on by my desirability changed everything for our intimacy.",
+        likes: 124,
+        liked: false,
+        timestamp: "3 hours ago"
+      },
+      {
+        id: "conf-2",
+        pseudonym: "CuriousEcho_9",
+        text: "We haven't met anyone in real life yet, but the level of vulnerability and deep conversations this has unlocked in our marriage has brought us closer than we have been in a decade.",
+        likes: 96,
+        liked: false,
+        timestamp: "Yesterday"
+      }
+    ];
+
+    const INITIAL_DAILY = {
+      id: "daily-101",
+      question: "When establishing relationship boundaries, what was the most important conversation topic for you and your partner?",
+      options: [
+        { id: "opt-1", text: "Emotional connection limits", votes: 410 },
+        { id: "opt-2", text: "Strict health & safety guidelines", votes: 320 },
+        { id: "opt-3", text: "Complete transparency / disclosure speed", votes: 580 },
+        { id: "opt-4", text: "Discretion & social privacy", votes: 210 }
+      ],
+      userVoted: null
+    };
+
+    const QUIZ_DATA = [
+      {
+        q: "How comfortable are you and your partner discussing relationship fantasies openly?",
+        options: [
+          { text: "Completely open — we share thoughts without judgment", score: 3 },
+          { text: "Somewhat comfortable, but we take it slow", score: 2 },
+          { text: "Just starting to test the waters", score: 1 }
+        ]
+      },
+      {
+        q: "What is your mutual stance on personal and emotional boundaries?",
+        options: [
+          { text: "Physical lifestyle exploration with strict emotional exclusivity", score: 3 },
+          { text: "Strictly fantasy and roleplay discussions for now", score: 2 },
+          { text: "Still defining what feels right for both of us", score: 1 }
+        ]
+      },
+      {
+        q: "How do you handle check-ins and reassurance after intimate discussions?",
+        options: [
+          { text: "Immediate debrief with mutual affection and active listening", score: 3 },
+          { text: "We revisit the conversation after sleeping on it", score: 2 },
+          { text: "Sometimes emotions get complicated and take processing time", score: 1 }
+        ]
+      }
+    ];
+
+    /* ==========================================================================
+       STORAGE & STATE MANAGER
+       ========================================================================== */
+    class Store {
+      constructor() {
+        this.prefix = "hotwife_club_";
+        this.init();
+      }
+
+      init() {
+        if (!this.get("ageVerified")) this.set("ageVerified", false);
+        if (!this.get("rooms")) this.set("rooms", INITIAL_ROOMS);
+        if (!this.get("posts")) this.set("posts", INITIAL_POSTS);
+        if (!this.get("confessions")) this.set("confessions", INITIAL_CONFESSIONS);
+        if (!this.get("daily")) this.set("daily", INITIAL_DAILY);
+        if (!this.get("reports")) this.set("reports", []);
+        if (!this.get("user")) this.set("user", null);
+      }
+
+      get(key) {
+        try {
+          const val = localStorage.getItem(this.prefix + key);
+          return val ? JSON.parse(val) : null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      set(key, val) {
+        try {
+          localStorage.setItem(this.prefix + key, JSON.stringify(val));
+        } catch (e) {}
+      }
+    }
+
+    const store = new Store();
+
+    /* ==========================================================================
+       CORE APPLICATION CONTROLLER
+       ========================================================================== */
+    class AppController {
+      constructor() {
+        this.currentView = "home";
+        this.feedFilter = "all";
+        this.createType = "post";
+        this.quizStep = 0;
+        this.quizScore = 0;
+      }
+
+      start() {
+        this.checkAgeGate();
+        this.updateAuthUI();
+        this.renderStats();
+        this.renderFeed();
+        this.renderConfessions();
+        this.renderRooms();
+        this.renderDailyPoll();
+        this.renderAdminQueue();
+        this.setupPopstate();
+      }
+
+      showToast(msg) {
+        const toast = document.getElementById("toastMessage");
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2800);
+      }
+
+      /* Navigation Router */
+      navigate(viewName) {
+        this.currentView = viewName;
+        document.querySelectorAll(".view-section").forEach(sec => sec.classList.remove("active"));
+        const targetView = document.getElementById(`view-${viewName}`);
+        if (targetView) targetView.classList.add("active");
+
+        // Update nav links
+        document.querySelectorAll(".nav-link").forEach(l => {
+          l.classList.toggle("active", l.getAttribute("data-view") === viewName);
+        });
+        document.querySelectorAll(".mobile-nav-item").forEach(l => {
+          l.classList.toggle("active", l.getAttribute("data-view") === viewName);
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        if (viewName === "profile") this.renderProfileView();
+        if (viewName === "admin") this.renderAdminQueue();
+      }
+
+      setupPopstate() {
+        window.addEventListener("hashchange", () => {
+          const h = window.location.hash.replace("#", "");
+          if (h) this.navigate(h);
+        });
+      }
+
+      /* 18+ Age Assurance Workflow */
+      checkAgeGate() {
+        const isVerified = store.get("ageVerified");
+        const modal = document.getElementById("ageGateModal");
+        if (!isVerified) {
+          modal.classList.add("active");
+        } else {
+          modal.classList.remove("active");
+        }
+
+        document.getElementById("btnAcceptAge").onclick = () => {
+          store.set("ageVerified", true);
+          modal.classList.remove("active");
+          this.showToast("Age verified. Welcome to The Hotwife Club.");
+        };
+
+        document.getElementById("btnDeclineAge").onclick = () => {
+          window.location.href = "https://www.google.com";
+        };
+      }
+
+      /* Auth Management */
+      toggleAuthModal() {
+        const user = store.get("user");
+        if (user) {
+          if (confirm(`Logged in as @${user.username}. Would you like to sign out?`)) {
+            store.set("user", null);
+            this.updateAuthUI();
+            this.showToast("Signed out successfully.");
+          }
+        } else {
+          this.openModal("authModal");
+        }
+      }
+
+      handleAuthSubmit(e) {
+        e.preventDefault();
+        const username = document.getElementById("authUsername").value.trim();
+        const email = document.getElementById("authEmail").value.trim();
+        const type = document.getElementById("authAccountType").value;
+
+        const user = {
+          username: username.replace("@", ""),
+          email,
+          role: type,
+          bio: "Passionate about open discussions, mutual trust, and lifestyle exploration.",
+          created: new Date().toLocaleDateString()
+        };
+
+        store.set("user", user);
+        this.closeModal("authModal");
+        this.updateAuthUI();
+        this.showToast(`Welcome @${user.username}!`);
+      }
+
+      updateAuthUI() {
+        const user = store.get("user");
+        const authBtn = document.getElementById("btnAuthHeader");
+        const createHeaderBtn = document.getElementById("btnCreateHeader");
+        const adminBadge = document.getElementById("btnAdminBadge");
+
+        if (user) {
+          authBtn.textContent = `@${user.username}`;
+          createHeaderBtn.style.display = "inline-flex";
+          adminBadge.style.display = (user.role === "Admin") ? "inline-flex" : "none";
+        } else {
+          authBtn.textContent = "Sign In";
+          createHeaderBtn.style.display = "none";
+          adminBadge.style.display = "none";
+        }
+      }
+
+      checkAuthAndDo(callback) {
+        const user = store.get("user");
+        if (!user) {
+          this.openModal("authModal");
+          this.showToast("Please sign in with a pseudonym to participate.");
+        } else {
+          callback();
+        }
+      }
+
+      /* Platform Metrics */
+      renderStats() {
+        const posts = store.get("posts") || [];
+        const confessions = store.get("confessions") || [];
+        const rooms = store.get("rooms") || [];
+        const totalCommunityContributions = posts.length + confessions.length + 1840;
+
+        const container = document.getElementById("statsContainer");
+        container.innerHTML = `
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Verified Rooms</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${totalCommunityContributions.toLocaleString()}</div>
+            <div class="stat-label">Contributions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Consent-First</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Discreet</div>
+            <div class="stat-label">Privacy Shield</div>
+          </div>
+        `;
+      }
+
+      /* Feed System */
+      setFeedFilter(filter, el) {
+        this.feedFilter = filter;
+        document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+        if (el) el.classList.add("active");
+        this.renderFeed();
+      }
+
+      renderFeed() {
+        const container = document.getElementById("postsFeedContainer");
+        let posts = store.get("posts") || [];
+
+        if (this.feedFilter === "trending") {
+          posts = [...posts].sort((a, b) => b.likes - a.likes);
+        } else if (this.feedFilter === "saved") {
+          posts = posts.filter(p => p.saved);
+        } else if (this.feedFilter === "popular") {
+          posts = posts.filter(p => p.likes > 20);
+        }
+
+        if (posts.length === 0) {
+          container.innerHTML = `<div class="card" style="text-align: center; color: var(--text-muted);">No posts found in this filter. Be the first to post!</div>`;
+          return;
+        }
+
+        container.innerHTML = posts.map(post => `
+          <article class="post-card" id="card-${post.id}">
+            <div class="post-header">
+              <div class="author-info">
+                <div class="avatar">${post.author.charAt(0).toUpperCase()}</div>
+                <div>
+                  <div class="author-name">@${post.author}</div>
+                  <div class="post-room-tag">in ${post.roomName} • ${post.timestamp}</div>
+                </div>
+              </div>
+              <button onclick="app.reportContent('post', '${post.id}', '${post.content.replace(/'/g, "\\'")}')" title="Report" style="color: var(--text-faint); font-size: 0.8rem;">
+                🚩
+              </button>
+            </div>
+            
+            <p class="post-content">${post.content}</p>
+
+            <div class="post-actions">
+              <div class="action-group">
+                <button class="action-btn ${post.liked ? 'liked' : ''}" onclick="app.toggleLikePost('${post.id}')">
+                  ${post.liked ? '❤️' : '🤍'} <span>${post.likes}</span>
+                </button>
+                <button class="action-btn" onclick="app.toggleComments('${post.id}')">
+                  💬 <span>${post.comments.length}</span>
+                </button>
+              </div>
+              <div>
+                <button class="action-btn ${post.saved ? 'saved' : ''}" onclick="app.toggleSavePost('${post.id}')">
+                  ${post.saved ? '🔖 Saved' : '🔖 Save'}
+                </button>
+              </div>
+            </div>
+
+            <!-- Comments Drawer -->
+            <div class="comments-drawer" id="comments-${post.id}">
+              <div id="commentList-${post.id}">
+                ${post.comments.map(c => `
+                  <div class="comment-item">
+                    <span class="comment-author">@${c.author}:</span>
+                    <span>${c.text}</span>
+                  </div>
+                `).join('')}
+              </div>
+              <div style="display: flex; gap: 8px; margin-top: 10px;">
+                <input type="text" id="inputComment-${post.id}" placeholder="Write a supportive reply..." style="flex:1; padding: 8px 12px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <button class="btn btn-primary btn-sm" onclick="app.addComment('${post.id}')">Reply</button>
+              </div>
+            </div>
+          </article>
+        `).join('');
+
+        this.renderSidebarRooms();
+      }
+
+      toggleLikePost(postId) {
+        this.checkAuthAndDo(() => {
+          const posts = store.get("posts");
+          const p = posts.find(item => item.id === postId);
+          if (p) {
+            p.liked = !p.liked;
+            p.likes += p.liked ? 1 : -1;
+            store.set("posts", posts);
+            this.renderFeed();
+          }
+        });
+      }
+
+      toggleSavePost(postId) {
+        this.checkAuthAndDo(() => {
+          const posts = store.get("posts");
+          const p = posts.find(item => item.id === postId);
+          if (p) {
+            p.saved = !p.saved;
+            store.set("posts", posts);
+            this.renderFeed();
+            this.showToast(p.saved ? "Saved to your bookmarks" : "Removed from bookmarks");
+          }
+        });
+      }
+
+      toggleComments(postId) {
+        const drawer = document.getElementById(`comments-${postId}`);
+        if (drawer) {
+          drawer.style.display = drawer.style.display === "block" ? "none" : "block";
+        }
+      }
+
+      addComment(postId) {
+        this.checkAuthAndDo(() => {
+          const input = document.getElementById(`inputComment-${postId}`);
+          const text = input.value.trim();
+          if (!text) return;
+
+          const user = store.get("user");
+          const posts = store.get("posts");
+          const p = posts.find(item => item.id === postId);
+          if (p) {
+            p.comments.push({ author: user.username, text });
+            store.set("posts", posts);
+            input.value = "";
+            this.renderFeed();
+            // Re-open comments
+            setTimeout(() => this.toggleComments(postId), 10);
+          }
+        });
+      }
+
+      /* Anonymous Confessions */
+      renderConfessions() {
+        const container = document.getElementById("confessionsContainer");
+        const list = store.get("confessions") || [];
+
+        container.innerHTML = list.map(c => `
+          <div class="confession-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="confession-badge">🎭 Pseudonym: @${c.pseudonym}</span>
+              <button onclick="app.reportContent('confession', '${c.id}', '${c.text.replace(/'/g, "\\'")}')" style="color: var(--text-faint); font-size: 0.75rem;">🚩</button>
+            </div>
+            <p style="font-size: 0.96rem; margin: 10px 0 16px; line-height: 1.6;">${c.text}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px; font-size: 0.82rem; color: var(--text-muted);">
+              <span>${c.timestamp}</span>
+              <button class="action-btn ${c.liked ? 'liked' : ''}" onclick="app.toggleLikeConfession('${c.id}')">
+                🔥 Relatable (${c.likes})
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      toggleLikeConfession(id) {
+        const list = store.get("confessions");
+        const c = list.find(item => item.id === id);
+        if (c) {
+          c.liked = !c.liked;
+          c.likes += c.liked ? 1 : -1;
+          store.set("confessions", list);
+          this.renderConfessions();
+        }
+      }
+
+      /* Club Rooms */
+      renderRooms() {
+        const grid = document.getElementById("clubRoomsGrid");
+        const rooms = store.get("rooms") || [];
+
+        grid.innerHTML = rooms.map(r => `
+          <div class="room-card">
+            <div>
+              <div style="font-size: 1.8rem; margin-bottom: 8px;">${r.icon}</div>
+              <h3 class="room-title">${r.name}</h3>
+              <p class="room-desc">${r.desc}</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">${r.members.toLocaleString()} members</span>
+              <button class="btn btn-secondary btn-sm" onclick="app.filterByRoom('${r.id}')">Enter Room</button>
+            </div>
+          </div>
+        `).join('');
+
+        // Populate create modal dropdown
+        const select = document.getElementById("createRoomSelect");
+        select.innerHTML = rooms.map(r => `<option value="${r.id}">${r.name}</option>`).join('');
+      }
+
+      renderSidebarRooms() {
+        const container = document.getElementById("sidebarRoomsList");
+        const rooms = store.get("rooms") || [];
+        container.innerHTML = rooms.slice(0, 4).map(r => `
+          <div style="display:flex; justify-content: space-between; font-size: 0.85rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04);">
+            <span style="color: var(--text-main); font-weight: 600;">${r.icon} ${r.name}</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">${r.members}</span>
+          </div>
+        `).join('');
+      }
+
+      filterByRoom(roomId) {
+        this.navigate("feed");
+        const posts = store.get("posts").filter(p => p.roomId === roomId);
+        const container = document.getElementById("postsFeedContainer");
+        if (posts.length === 0) {
+          container.innerHTML = `<div class="card" style="text-align:center; color: var(--text-muted);">No posts in this room yet. Start the conversation!</div>`;
+        } else {
+          this.renderFeed();
+        }
+      }
+
+      /* Daily Hotwife Question */
+      renderDailyPoll() {
+        const poll = store.get("daily");
+        const container = document.getElementById("dailyPollCard");
+        const homeTitle = document.getElementById("homePollTitle");
+        if (homeTitle) homeTitle.textContent = poll.question;
+
+        const totalVotes = poll.options.reduce((acc, curr) => acc + curr.votes, 0);
+
+        container.innerHTML = `
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin-bottom: 8px;">${poll.question}</h3>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 16px;">
+            ${totalVotes.toLocaleString()} votes cast anonymously
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            ${poll.options.map(opt => {
+              const pct = totalVotes > 0 ? Math.round((opt.votes / totalVotes) * 100) : 0;
+              const hasVoted = poll.userVoted !== null;
+              return `
+                <button class="poll-option-btn" ${hasVoted ? 'disabled' : ''} onclick="app.voteDailyPoll('${opt.id}')">
+                  <div class="poll-progress" style="width: ${hasVoted ? pct : 0}%;"></div>
+                  <span class="poll-text">${opt.text}</span>
+                  <span class="poll-pct">${hasVoted ? pct + '%' : ''}</span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+        `;
+
+        // Render mock archive
+        const archive = document.getElementById("dailyArchiveContainer");
+        archive.innerHTML = `
+          <div class="card" style="font-size: 0.9rem;">
+            <strong>Yesterday:</strong> "How long did you and your partner discuss the lifestyle before taking any physical steps?"
+            <div style="color: var(--neon-pink); font-size: 0.78rem; margin-top: 4px;">Top answer: Over 1 Year (62%)</div>
+          </div>
+          <div class="card" style="font-size: 0.9rem;">
+            <strong>2 Days Ago:</strong> "Does compersion (joy for your partner's pleasure) come naturally or with practice?"
+            <div style="color: var(--neon-pink); font-size: 0.78rem; margin-top: 4px;">Top answer: Grows with intentional practice (71%)</div>
+          </div>
+        `;
+      }
+
+      voteDailyPoll(optId) {
+        this.checkAuthAndDo(() => {
+          const poll = store.get("daily");
+          if (poll.userVoted) return;
+
+          const opt = poll.options.find(o => o.id === optId);
+          if (opt) {
+            opt.votes += 1;
+            poll.userVoted = optId;
+            store.set("daily", poll);
+            this.renderDailyPoll();
+            this.showToast("Your anonymous vote has been recorded!");
+          }
+        });
+      }
+
+      /* Couple Compatibility Quiz */
+      startQuiz() {
+        this.quizStep = 0;
+        this.quizScore = 0;
+        document.getElementById("quizIntro").style.display = "none";
+        document.getElementById("quizResult").style.display = "none";
+        document.getElementById("quizQuestions").style.display = "block";
+        this.renderQuizStep();
+      }
+
+      renderQuizStep() {
+        const container = document.getElementById("quizQuestions");
+        const step = QUIZ_DATA[this.quizStep];
+
+        container.innerHTML = `
+          <div style="margin-bottom: 14px;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--electric-purple);">QUESTION ${this.quizStep + 1} OF ${QUIZ_DATA.length}</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-top: 4px;">${step.q}</h3>
+          </div>
+          <div>
+            ${step.options.map((opt, i) => `
+              <div class="quiz-option" onclick="app.answerQuiz(${opt.score})">
+                ${opt.text}
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      answerQuiz(score) {
+        this.quizScore += score;
+        this.quizStep++;
+        if (this.quizStep < QUIZ_DATA.length) {
+          this.renderQuizStep();
+        } else {
+          this.showQuizResult();
+        }
+      }
+
+      showQuizResult() {
+        document.getElementById("quizQuestions").style.display = "none";
+        const result = document.getElementById("quizResult");
+        result.style.display = "block";
+
+        let summary = "";
+        if (this.quizScore >= 8) {
+          summary = "High Communication Alignment & Strong Foundation. You prioritize active consent and emotional security.";
+        } else if (this.quizScore >= 5) {
+          summary = "Growing Compatibility & Exploration. Taking intentional steps and continuing regular check-ins is recommended.";
+        } else {
+          summary = "Curiosity Stage. Focus on deep foundation building, pillow talk, and clarifying personal boundaries together.";
+        }
+
+        result.innerHTML = `
+          <span style="font-size: 2.5rem;">💎</span>
+          <h3 style="font-size: 1.4rem; font-weight: 800; margin: 10px 0;">Quiz Summary: ${summary}</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Score: ${this.quizScore} / 9 • Results are kept strictly private on this device.
+          </p>
+          <button class="btn btn-secondary" onclick="app.startQuiz()">Retake Quiz</button>
+        `;
+      }
+
+      /* Modal and Creation Handler */
+      openModal(modalId, type = "post") {
+        document.getElementById(modalId).classList.add("active");
+        if (modalId === "createModal") {
+          this.setCreateType(type);
+        }
+      }
+
+      closeModal(modalId) {
+        document.getElementById(modalId).classList.remove("active");
+      }
+
+      setCreateType(type) {
+        this.createType = type;
+        const btnPost = document.getElementById("typeBtnPost");
+        const btnConf = document.getElementById("typeBtnConfession");
+        const roomGroup = document.getElementById("roomSelectGroup");
+        const label = document.getElementById("createTextLabel");
+
+        if (type === "post") {
+          btnPost.classList.add("active");
+          btnConf.classList.remove("active");
+          roomGroup.style.display = "block";
+          label.textContent = "Discussion Post (Visible under your handle)";
+        } else {
+          btnConf.classList.add("active");
+          btnPost.classList.remove("active");
+          roomGroup.style.display = "none";
+          label.textContent = "Confession Content (Posted under an auto-generated pseudonym)";
+        }
+      }
+
+      handleCreateSubmit(e) {
+        e.preventDefault();
+        const text = document.getElementById("createText").value.trim();
+        if (!text) return;
+
+        const user = store.get("user") || { username: "GuestMember" };
+
+        if (this.createType === "post") {
+          const roomId = document.getElementById("createRoomSelect").value;
+          const rooms = store.get("rooms");
+          const room = rooms.find(r => r.id === roomId) || rooms[0];
+
+          const posts = store.get("posts");
+          posts.unshift({
+            id: "post-" + Date.now(),
+            author: user.username,
+            roomId: room.id,
+            roomName: room.name,
+            content: text,
+            likes: 0,
+            liked: false,
+            saved: false,
+            comments: [],
+            timestamp: "Just now"
+          });
+          store.set("posts", posts);
+          this.renderFeed();
+          this.navigate("feed");
+          this.showToast("Post published to " + room.name);
+        } else {
+          const confessions = store.get("confessions");
+          const randomSuffix = Math.floor(100 + Math.random() * 900);
+          confessions.unshift({
+            id: "conf-" + Date.now(),
+            pseudonym: "Whisper_" + randomSuffix,
+            text,
+            likes: 0,
+            liked: false,
+            timestamp: "Just now"
+          });
+          store.set("confessions", confessions);
+          this.renderConfessions();
+          this.navigate("confessions");
+          this.showToast("Anonymous confession submitted discreetly.");
+        }
+
+        document.getElementById("createText").value = "";
+        this.closeModal("createModal");
+      }
+
+      /* Reporting & Trust & Safety System */
+      reportContent(type, id, snippet) {
+        this.checkAuthAndDo(() => {
+          const reason = prompt("Safety First: Please provide a reason for flagging this content:\n(e.g., Harassment, Non-consensual content, Spam, Solicitation)");
+          if (reason && reason.trim()) {
+            const reports = store.get("reports") || [];
+            reports.push({
+              reportId: "rep-" + Date.now(),
+              type,
+              targetId: id,
+              snippet: snippet.substring(0, 60) + "...",
+              reason: reason.trim(),
+              date: new Date().toLocaleTimeString()
+            });
+            store.set("reports", reports);
+            this.showToast("Thank you. Content forwarded to admin moderation review queue.");
+            this.renderAdminQueue();
+          }
+        });
+      }
+
+      renderAdminQueue() {
+        const reports = store.get("reports") || [];
+        const tableBody = document.getElementById("adminReportsTableBody");
+        const count = document.getElementById("adminTotalReports");
+        if (count) count.textContent = reports.length;
+
+        if (!tableBody) return;
+
+        if (reports.length === 0) {
+          tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 18px;">Moderation queue is clean. Zero pending flags.</td></tr>`;
+          return;
+        }
+
+        tableBody.innerHTML = reports.map(r => `
+          <tr>
+            <td><span class="badge-18" style="background:#4b5563;">${r.type}</span></td>
+            <td>"${r.snippet}"</td>
+            <td style="color: var(--danger);">${r.reason}</td>
+            <td>
+              <button class="btn btn-primary btn-sm" style="font-size: 0.72rem; padding: 4px 10px;" onclick="app.dismissReport('${r.reportId}')">Dismiss</button>
+              <button class="btn btn-secondary btn-sm" style="font-size: 0.72rem; padding: 4px 10px; color: var(--danger);" onclick="app.removeReportedContent('${r.reportId}', '${r.type}', '${r.targetId}')">Remove</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      dismissReport(repId) {
+        let reports = store.get("reports") || [];
+        reports = reports.filter(r => r.reportId !== repId);
+        store.set("reports", reports);
+        this.renderAdminQueue();
+        this.showToast("Report reviewed and dismissed.");
+      }
+
+      removeReportedContent(repId, type, targetId) {
+        if (confirm("Are you sure you want to remove this content for violating community safety?")) {
+          if (type === "post") {
+            let posts = store.get("posts") || [];
+            posts = posts.filter(p => p.id !== targetId);
+            store.set("posts", posts);
+            this.renderFeed();
+          } else if (type === "confession") {
+            let confs = store.get("confessions") || [];
+            confs = confs.filter(c => c.id !== targetId);
+            store.set("confessions", confs);
+            this.renderConfessions();
+          }
+          this.dismissReport(repId);
+          this.showToast("Violating content removed from platform.");
+        }
+      }
+
+      /* Profile Management */
+      renderProfileView() {
+        const user = store.get("user") || { username: "GuestMember", role: "Individual", bio: "Curious about adult lifestyle communication." };
+        document.getElementById("profileUsername").textContent = "@" + user.username;
+        document.getElementById("profileAvatar").textContent = user.username.charAt(0).toUpperCase();
+        document.getElementById("profileRoleTag").textContent = user.role + " Member";
+        document.getElementById("profileBio").textContent = user.bio;
+
+        const myPosts = (store.get("posts") || []).filter(p => p.author === user.username);
+        const container = document.getElementById("profileRoomsActivity");
+        container.innerHTML = `
+          <div class="card">
+            <h4 style="font-size: 0.95rem; margin-bottom: 8px;">Your Contributions (${myPosts.length})</h4>
+            ${myPosts.length === 0 ? '<p style="font-size: 0.85rem; color: var(--text-muted);">You have not published any public room posts yet.</p>' : 
+              myPosts.map(p => `<div style="font-size: 0.85rem; padding: 6px 0; border-bottom: 1px solid var(--border-subtle);">${p.content}</div>`).join('')}
+          </div>
+        `;
+      }
+
+      editBioPrompt() {
+        const user = store.get("user");
+        if (!user) return;
+        const newBio = prompt("Update your discreet profile bio:", user.bio);
+        if (newBio !== null && newBio.trim()) {
+          user.bio = newBio.trim();
+          store.set("user", user);
+          this.renderProfileView();
+          this.showToast("Bio updated.");
+        }
+      }
+
+      toggleCoupleStatus() {
+        const user = store.get("user");
+        if (!user) return;
+        user.role = user.role === "Couple" ? "Individual" : "Couple";
+        store.set("user", user);
+        this.renderProfileView();
+        this.showToast("Profile set to " + user.role);
+      }
+
+      deleteAccountPrompt() {
+        if (confirm("Are you sure? This will remove all your posts, preferences, and data from this device.")) {
+          localStorage.clear();
+          location.reload();
+        }
+      }
+    }
+
+    // Initialize the platform
+    const app = new AppController();
+    document.addEventListener("DOMContentLoaded", () => app.start());
+  </script>
+</body>
+</html>
+
