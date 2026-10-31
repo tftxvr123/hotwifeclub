@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-
+  
   <!-- Vercel Web Analytics Tracking Script -->
   <script defer src="/_vercel/insights/script.js"></script>
 
@@ -17,23 +17,23 @@
        THE HOTWIFE CLUB — HIGH-GLAM PHOTO & FACT SYSTEM
        ========================================================================== */
     :root {
-      --bg-base: #050507;
-      --bg-surface: #0c0c12;
-      --bg-card: #12121a;
-      --border-subtle: #20202e;
-      --border-accent: rgba(255, 31, 128, 0.4);
+      --bg-base: #040406;
+      --bg-surface: #0a0a10;
+      --bg-card: #101018;
+      --border-subtle: #222232;
+      --border-accent: rgba(255, 31, 128, 0.5);
 
       --neon-pink: #ff1f80;
-      --neon-pink-glow: rgba(255, 31, 128, 0.35);
+      --neon-pink-glow: rgba(255, 31, 128, 0.45);
       --electric-purple: #9d3bf5;
-      --electric-purple-glow: rgba(157, 59, 245, 0.35);
+      --electric-purple-glow: rgba(157, 59, 245, 0.4);
       --gold-accent: #f59e0b;
-      --gold-glow: rgba(245, 158, 11, 0.35);
+      --gold-glow: rgba(245, 158, 11, 0.4);
       --crimson-accent: #ef4444;
       
       --text-main: #fcfcff;
-      --text-muted: #9e9eb4;
-      --text-faint: #5a5a72;
+      --text-muted: #a4a4be;
+      --text-faint: #5e5e78;
       
       --radius-sm: 8px;
       --radius-md: 16px;
@@ -99,22 +99,22 @@
     .btn-primary {
       background: linear-gradient(135deg, #ff1f80, #c026d3);
       color: #fff;
-      box-shadow: 0 4px 20px var(--neon-pink-glow);
+      box-shadow: 0 4px 22px var(--neon-pink-glow);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(255, 31, 128, 0.65);
+      box-shadow: 0 8px 32px rgba(255, 31, 128, 0.75);
     }
 
     .btn-secondary {
-      background: rgba(18, 18, 26, 0.85);
+      background: rgba(16, 16, 24, 0.88);
       color: #fff;
       border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
     .btn-secondary:hover {
       border-color: var(--neon-pink);
-      background: #1b1b26;
+      background: #1c1c28;
     }
 
     .btn-gold {
@@ -125,7 +125,7 @@
     }
     .btn-gold:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.6);
+      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.65);
     }
 
     .btn-sm { padding: 8px 18px; font-size: 0.82rem; }
@@ -137,9 +137,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(5, 5, 7, 0.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(4, 4, 6, 0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
     }
     .header-inner {
       display: flex;
@@ -203,29 +203,29 @@
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      min-height: 520px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 35px var(--neon-pink-glow);
+      min-height: 540px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 45px var(--neon-pink-glow);
       border: 1px solid var(--border-accent);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 30px;
+      padding: 32px;
       background-size: cover;
-      background-position: center;
-      transition: background-image 0.5s ease-in-out;
+      background-position: center 30%;
+      transition: background-image 0.6s ease-in-out, transform 0.4s ease;
     }
     .hero-visual-side::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5,5,7,0.15) 0%, rgba(5,5,7,0.88) 65%, #050507 100%);
+      background: linear-gradient(180deg, rgba(4,4,6,0.1) 0%, rgba(6,6,10,0.5) 45%, #050508 100%);
     }
 
     .fact-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 31, 128, 0.25);
+      background: rgba(255, 31, 128, 0.28);
       border: 1px solid var(--neon-pink);
       color: #ff85be;
       font-weight: 800;
@@ -243,13 +243,13 @@
     .fact-quote-large {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+      font-size: clamp(1.28rem, 2.3vw, 1.65rem);
       line-height: 1.45;
       color: #fff;
       margin-bottom: 16px;
       position: relative;
       z-index: 2;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      text-shadow: 0 2px 14px rgba(0,0,0,0.95);
     }
 
     /* Section Headers */
@@ -285,7 +285,7 @@
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      min-height: 490px;
+      min-height: 510px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -293,19 +293,20 @@
       border: 1px solid var(--border-subtle);
       background-size: cover;
       background-position: center;
-      transition: all 0.3s ease;
+      transition: all 0.35s ease;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.85);
     }
     .lover-story-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5,5,7,0.15) 0%, rgba(9,9,14,0.75) 50%, #060609 100%);
+      background: linear-gradient(180deg, rgba(4,4,6,0.05) 0%, rgba(8,8,14,0.65) 45%, #050508 100%);
       transition: background 0.3s;
     }
     .lover-story-card:hover {
       transform: translateY(-5px);
       border-color: var(--neon-pink);
-      box-shadow: 0 14px 40px rgba(255, 31, 128, 0.3);
+      box-shadow: 0 16px 45px rgba(255, 31, 128, 0.4);
     }
     .lover-content { position: relative; z-index: 2; }
     .lover-badge {
@@ -313,9 +314,9 @@
       align-items: center;
       gap: 6px;
       color: var(--gold-accent);
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      padding: 3px 10px;
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      padding: 4px 12px;
       border-radius: var(--radius-full);
       font-size: 0.72rem;
       font-weight: 800;
@@ -330,10 +331,11 @@
       color: #fff;
       line-height: 1.4;
       margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
     .lover-narrative {
       font-size: 0.88rem;
-      color: #c9c9de;
+      color: #d2d2e4;
       line-height: 1.6;
       margin-bottom: 14px;
     }
@@ -341,7 +343,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,0.12);
       padding-top: 12px;
       font-size: 0.8rem;
       color: var(--text-muted);
@@ -356,25 +358,30 @@
     }
     .fact-card {
       position: relative;
-      min-height: 480px;
+      min-height: 500px;
       border-radius: var(--radius-lg);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 26px;
+      padding: 28px;
       border: 1px solid var(--border-subtle);
       background-size: cover;
       background-position: center;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.85);
     }
     .fact-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(9,9,14,0.7) 40%, #08080d 100%);
+      background: linear-gradient(180deg, rgba(4,4,6,0.08) 0%, rgba(8,8,14,0.6) 38%, #050508 100%);
     }
-    .fact-card:hover { transform: translateY(-5px); border-color: var(--neon-pink); }
+    .fact-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--neon-pink);
+      box-shadow: 0 16px 45px rgba(255, 31, 128, 0.35);
+    }
     .fact-card-body { position: relative; z-index: 2; }
     .fact-card-number {
       font-family: var(--font-display);
@@ -392,8 +399,9 @@
       line-height: 1.4;
       color: #fff;
       margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
-    .fact-card-sub { font-size: 0.85rem; color: #bfbfd4; line-height: 1.5; margin-bottom: 16px; }
+    .fact-card-sub { font-size: 0.85rem; color: #c4c4dc; line-height: 1.5; margin-bottom: 16px; }
 
     /* Jewelry Grid */
     .jewels-grid {
@@ -406,27 +414,27 @@
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      min-height: 510px;
+      min-height: 520px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 28px;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       background-size: cover;
       background-position: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      transition: all 0.35s ease;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85);
     }
     .jewel-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(12,10,18,0.75) 45%, #07060a 100%);
+      background: linear-gradient(180deg, rgba(4,4,6,0.06) 0%, rgba(10,8,16,0.65) 42%, #06050a 100%);
     }
     .jewel-card:hover {
       transform: translateY(-5px);
       border-color: var(--gold-accent);
-      box-shadow: 0 14px 45px var(--gold-glow);
+      box-shadow: 0 16px 50px var(--gold-glow);
     }
     .jewel-content { position: relative; z-index: 2; }
     .jewel-tag {
@@ -435,8 +443,8 @@
       color: var(--gold-accent);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.4);
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.45);
       padding: 4px 12px;
       border-radius: var(--radius-full);
       display: inline-block;
@@ -517,16 +525,14 @@
     }
     .cue-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
 
-    /* ==========================================================================
-       NEW: THE CUCKOLD PROTOCOL (AUTHORITY, CONTROL & SIDELINING)
-       ========================================================================== */
+    /* The Cuckold Protocol */
     .protocol-section-wrap {
       background: radial-gradient(circle at center, #180d22 0%, #0d0815 60%, var(--bg-base) 100%);
-      border: 1px solid rgba(157, 59, 245, 0.4);
+      border: 1px solid rgba(157, 59, 245, 0.45);
       border-radius: var(--radius-lg);
       padding: 40px 24px;
       margin-bottom: 70px;
-      box-shadow: 0 0 35px rgba(157, 59, 245, 0.15);
+      box-shadow: 0 0 40px rgba(157, 59, 245, 0.2);
     }
     .protocol-grid {
       display: grid;
@@ -535,7 +541,7 @@
       margin-top: 30px;
     }
     .protocol-card {
-      background: rgba(18, 14, 26, 0.9);
+      background: rgba(18, 14, 26, 0.92);
       border: 1px solid #332048;
       border-radius: var(--radius-md);
       padding: 26px;
@@ -547,7 +553,7 @@
     }
     .protocol-card:hover {
       border-color: var(--electric-purple);
-      box-shadow: 0 8px 30px rgba(157, 59, 245, 0.25);
+      box-shadow: 0 8px 30px rgba(157, 59, 245, 0.3);
       transform: translateY(-3px);
     }
     .protocol-number {
@@ -575,7 +581,7 @@
       margin-bottom: 16px;
     }
     .protocol-quote-box {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.55);
       border-left: 3px solid var(--electric-purple);
       padding: 10px 14px;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -604,7 +610,7 @@
       border-color: var(--gold-accent);
     }
     .boutique-img {
-      height: 240px;
+      height: 250px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -613,7 +619,7 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       border: 1px solid var(--gold-accent);
       color: var(--gold-accent);
       font-size: 0.7rem;
@@ -655,7 +661,7 @@
 
     .mobile-bottom-nav {
       display: flex; position: fixed; bottom: 0; left: 0; right: 0; height: 68px;
-      background: rgba(8, 8, 12, 0.96); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle);
+      background: rgba(6, 6, 10, 0.96); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle);
       z-index: 100; justify-content: space-around; align-items: center;
     }
     @media (min-width: 900px) { .mobile-bottom-nav { display: none; } }
@@ -681,7 +687,7 @@
 
     .site-footer {
       border-top: 1px solid var(--border-subtle); padding: 50px 0 28px; color: var(--text-muted);
-      font-size: 0.88rem; background: #040406; text-align: center;
+      font-size: 0.88rem; background: #030305; text-align: center;
     }
   </style>
 </head>
@@ -772,14 +778,14 @@
             </div>
           </div>
 
-          <!-- Dynamic Hotwife Fact Visual Card -->
-          <div class="hero-visual-side" id="heroVisualCard" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80');">
+          <!-- Dynamic Hotwife Fact Visual Card (Seductive Curation) -->
+          <div class="hero-visual-side" id="heroVisualCard" style="background-image: url('https://images.unsplash.com/photo-1574539602047-548bf9557352?auto=format&fit=crop&w=1200&q=80');">
             <div class="fact-card-body">
               <span class="fact-pill" id="heroFactNumber">HOTWIFE FACT #42</span>
               <p class="fact-quote-large" id="heroFactQuote">
                 "A hotwife doesn't explore because she's missing love at home. She explores because her husband's worship made her so confident that the world can't help but crave her."
               </p>
-              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; font-size: 0.85rem; color: #d8d8ea;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 14px; font-size: 0.85rem; color: #d8d8ea;">
                 <span>🔥 1.4k Shares</span>
                 <span style="color: var(--neon-pink); cursor: pointer;" onclick="app.nextHeroFact()">Tap for another fact →</span>
               </div>
@@ -790,7 +796,7 @@
 
       <!-- TEASER BANNER: THE SECRET CODE & CUCKOLD PROTOCOL -->
       <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(157, 59, 245, 0.2)); border: 1px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 36px 28px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 20px;">
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(157, 59, 245, 0.22)); border: 1px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 36px 28px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 20px;">
           <div>
             <span class="section-tag gold">NEW • THE COMPLETE LOOKBOOK</span>
             <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 8px;">
@@ -806,7 +812,7 @@
         </div>
       </div>
 
-      <!-- THE BULL & LOVER PERSPECTIVE SECTION -->
+      <!-- THE BULL & LOVER PERSPECTIVE SECTION (Seductive Image Curation) -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Unfiltered Encounters & Reverence</span>
@@ -817,7 +823,7 @@
         </div>
 
         <div class="lover-stories-grid">
-          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80');">
+          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80');">
             <div class="lover-content">
               <span class="lover-badge">🐂 Third / Bull Recap</span>
               <p class="lover-quote">"There is nothing in the world like being with an experienced married MILF. Absolutely zero games."</p>
@@ -831,7 +837,7 @@
             </div>
           </div>
 
-          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80');">
+          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1592399668789-6432393d5761?auto=format&fit=crop&w=900&q=80');">
             <div class="lover-content">
               <span class="lover-badge">🐂 Date Night Recap</span>
               <p class="lover-quote">"Seeing the gold wedding ring on her finger as she held my hand in the lounge... the taboo was electric."</p>
@@ -845,7 +851,7 @@
             </div>
           </div>
 
-          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=80');">
+          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1552222158-c6a622ca672b?auto=format&fit=crop&w=900&q=80');">
             <div class="lover-content">
               <span class="lover-badge">🐂 Real Encounter</span>
               <p class="lover-quote">"She carried herself like royalty because she is treated like royalty at home."</p>
@@ -861,7 +867,7 @@
         </div>
       </div>
 
-      <!-- HOTWIFE FACTS GALLERY -->
+      <!-- HOTWIFE FACTS GALLERY (High-Seduction Curated Imagery) -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Visual Truths & Provocations</span>
@@ -878,7 +884,7 @@
             </div>
           </div>
 
-          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80');">
+          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=80');">
             <div class="fact-card-body">
               <span class="fact-card-number">Hotwife Fact #51</span>
               <p class="fact-card-quote">"An anklet isn't just an accessory. It's a subtle crown for a queen allowed to play."</p>
@@ -887,7 +893,7 @@
             </div>
           </div>
 
-          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?auto=format&fit=crop&w=900&q=80');">
+          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80');">
             <div class="fact-card-body">
               <span class="fact-card-number">Hotwife Fact #102</span>
               <p class="fact-card-quote">"A woman who knows she is allowed to desire and be desired carries an electric glow."</p>
@@ -923,7 +929,7 @@
           </div>
         </div>
 
-        <!-- PART 1: THE SECRET JEWELRY DECODER -->
+        <!-- PART 1: THE SECRET JEWELRY DECODER (Hardcore Seductive Imagery) -->
         <div id="part-jewels" style="margin-bottom: 24px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             💎 Part I: The Jewelry Decoder
@@ -934,7 +940,7 @@
         <div class="jewels-grid">
           
           <!-- Jewel 1: The Left Anklet -->
-          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80');">
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">Primary Indicator</span>
               <h4 class="jewel-title">The Left Anklet</h4>
@@ -962,7 +968,7 @@
           </div>
 
           <!-- Jewel 3: Queen of Spades & Spade Motifs -->
-          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80');">
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">The QOS Symbol</span>
               <h4 class="jewel-title">Queen of Spades Motif</h4>
@@ -976,7 +982,7 @@
           </div>
 
           <!-- Jewel 4: Toe Rings & Barefoot Lounging -->
-          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');">
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">Resort & Summer Code</span>
               <h4 class="jewel-title">Sensual Toe Rings</h4>
@@ -1084,9 +1090,7 @@
           </div>
         </div>
 
-        <!-- ==================================================================
-             NEW PART IV: THE CUCKOLD PROTOCOL (CONTROL, AUTHORITY & SIDELINING)
-             ================================================================== -->
+        <!-- PART IV: THE CUCKOLD PROTOCOL -->
         <div id="part-protocol" class="protocol-section-wrap">
           <div style="text-align: center; max-width: 760px; margin: 0 auto;">
             <span class="section-tag crimson">⚡ SHARP • UNFILTERED • REALISTIC</span>
@@ -1216,7 +1220,7 @@
         <div class="boutique-grid">
           
           <div class="boutique-card">
-            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80');">
+            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=600&q=80');">
               <span class="boutique-badge">ESSENTIAL</span>
             </div>
             <div class="boutique-info">
@@ -1227,7 +1231,7 @@
           </div>
 
           <div class="boutique-card">
-            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80');">
+            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80');">
               <span class="boutique-badge">DISCREET LUXURY</span>
             </div>
             <div class="boutique-info">
@@ -1415,17 +1419,17 @@
       {
         num: "HOTWIFE FACT #42",
         quote: "A hotwife doesn't explore because she's missing love at home. She explores because her husband's worship made her so confident that the world can't help but crave her.",
-        img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+        img: "https://images.unsplash.com/photo-1574539602047-548bf9557352?auto=format&fit=crop&w=1200&q=80"
       },
       {
         num: "HOTWIFE FACT #18",
         quote: "True intimacy isn't keeping your diamond locked away in a dark drawer. It's letting her radiate under the lights, knowing she always returns to you.",
-        img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80"
+        img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
       },
       {
         num: "HOTWIFE FACT #95",
         quote: "The hottest moment isn't when she leaves for her date—it's when she slips into bed beside you afterward, flushed and ready to whisper every single detail.",
-        img: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80"
+        img: "https://images.unsplash.com/photo-1592399668789-6432393d5761?auto=format&fit=crop&w=1200&q=80"
       }
     ];
 
