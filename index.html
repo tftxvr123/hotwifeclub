@@ -128,6 +128,17 @@
       box-shadow: 0 6px 25px rgba(245, 158, 11, 0.65);
     }
 
+    .btn-goddess {
+      background: linear-gradient(135deg, #e11d48, #9333ea);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 4px 22px rgba(225, 29, 72, 0.5);
+    }
+    .btn-goddess:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 35px rgba(225, 29, 72, 0.8);
+    }
+
     .btn-sm { padding: 8px 18px; font-size: 0.82rem; }
 
     /* ==========================================================================
@@ -157,12 +168,14 @@
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
     }
-    .desktop-nav { display: none; align-items: center; gap: 20px; }
+    .desktop-nav { display: none; align-items: center; gap: 18px; }
     @media (min-width: 990px) { .desktop-nav { display: flex; } }
-    .nav-link { color: var(--text-muted); font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
+    .nav-link { color: var(--text-muted); font-size: 0.86rem; font-weight: 600; transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--neon-pink); }
     .nav-link.gold-link { color: var(--gold-accent); }
     .nav-link.gold-link:hover, .nav-link.gold-link.active { color: #fde68a; }
+    .nav-link.goddess-link { color: #f43f5e; font-weight: 700; text-shadow: 0 0 12px rgba(244, 63, 94, 0.5); }
+    .nav-link.goddess-link:hover, .nav-link.goddess-link.active { color: #fb7185; }
 
     /* Hero Split */
     .hero-split {
@@ -591,6 +604,92 @@
       line-height: 1.45;
     }
 
+    /* ==========================================================================
+       NEW: THE GODDESS COMPLEX & THE ALTAR (FEMALE SUPREMACY & WORSHIP)
+       ========================================================================== */
+    .goddess-hero {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      border: 1px solid rgba(225, 29, 72, 0.45);
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 60px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(225, 29, 72, 0.3);
+    }
+    .goddess-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4,4,6,0.1) 0%, rgba(20,5,14,0.65) 40%, #060206 100%);
+    }
+    .goddess-hero-content { position: relative; z-index: 2; max-width: 860px; }
+
+    .goddess-altar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+    .goddess-altar-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      background-size: cover;
+      background-position: center;
+      transition: all 0.35s ease;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.85);
+    }
+    .goddess-altar-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4,4,6,0.08) 0%, rgba(20,5,15,0.7) 42%, #080208 100%);
+    }
+    .goddess-altar-card:hover {
+      transform: translateY(-5px);
+      border-color: #f43f5e;
+      box-shadow: 0 20px 55px rgba(244, 63, 94, 0.45);
+    }
+    .goddess-altar-body { position: relative; z-index: 2; }
+    .goddess-altar-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .goddess-altar-text {
+      font-size: 0.92rem;
+      color: #e2d9e6;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    /* Interactive Commandment Box */
+    .commandment-box {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.15), rgba(147, 51, 234, 0.18));
+      border: 1px solid #f43f5e;
+      border-radius: var(--radius-lg);
+      padding: 40px 28px;
+      text-align: center;
+      margin-bottom: 70px;
+      box-shadow: 0 0 40px rgba(244, 63, 94, 0.25);
+    }
+
     /* Boutique Grid */
     .boutique-grid {
       display: grid;
@@ -718,7 +817,7 @@
   </div>
 
   <!-- ========================================================================
-       HEADER
+       HEADER (Includes Link to "The Goddess Complex")
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -729,6 +828,7 @@
 
       <nav class="desktop-nav">
         <a href="#home" class="nav-link active" data-view="home" onclick="app.navigate('home')">Home</a>
+        <a href="#goddess" class="nav-link goddess-link" data-view="goddess" onclick="app.navigate('goddess')">👑 The Goddess Complex</a>
         <a href="#code" class="nav-link gold-link" data-view="code" onclick="app.navigate('code')">✨ The Code & Jewels</a>
         <a href="#feed" class="nav-link" data-view="feed" onclick="app.navigate('feed')">Discussions</a>
         <a href="#confessions" class="nav-link" data-view="confessions" onclick="app.navigate('confessions')">Confessions</a>
@@ -769,8 +869,8 @@
               Nothing matches the erotic electricity of a married woman worshipped by lovers—and the intense marital bond forged when her husband watches with pure pride.
             </p>
             <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-              <button class="btn btn-primary" onclick="app.checkAuthAndDo(() => app.navigate('feed'))">
-                Explore The Community
+              <button class="btn btn-goddess" onclick="app.navigate('goddess')">
+                👑 Enter The Goddess Complex
               </button>
               <button class="btn btn-gold" onclick="app.navigate('code')">
                 ✨ Learn The Secret Signals & Jewels
@@ -778,7 +878,7 @@
             </div>
           </div>
 
-          <!-- Dynamic Hotwife Fact Visual Card (Seductive Curation) -->
+          <!-- Dynamic Hotwife Fact Visual Card -->
           <div class="hero-visual-side" id="heroVisualCard" style="background-image: url('https://images.unsplash.com/photo-1574539602047-548bf9557352?auto=format&fit=crop&w=1200&q=80');">
             <div class="fact-card-body">
               <span class="fact-pill" id="heroFactNumber">HOTWIFE FACT #42</span>
@@ -794,25 +894,25 @@
         </div>
       </div>
 
-      <!-- TEASER BANNER: THE SECRET CODE & CUCKOLD PROTOCOL -->
+      <!-- PROVOCATIVE TEASER BANNER: THE GODDESS COMPLEX -->
       <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(157, 59, 245, 0.22)); border: 1px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 36px 28px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 20px;">
+        <div style="background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(147, 51, 234, 0.25)); border: 1px solid #f43f5e; border-radius: var(--radius-lg); padding: 38px 30px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 24px; box-shadow: 0 0 35px rgba(244, 63, 94, 0.3);">
           <div>
-            <span class="section-tag gold">NEW • THE COMPLETE LOOKBOOK</span>
-            <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 8px;">
-              The Secret Language: Jewels, Signals & The Cuckold Protocol
+            <span class="section-tag crimson">👑 FLAGSHIP VAULT • WIFE-CENTRIC SUPREMACY</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 8px;">
+              The Goddess Complex: The Altar of Her Sovereignty
             </h3>
-            <p style="color: #d1d1e4; font-size: 0.95rem; max-width: 680px;">
-              Master how to hint, how to read non-verbal invitations, and dive into <strong>The Cuckold Protocol</strong>: raw, realistic rules on lover authority, permission-seeking, and casual sidelining.
+            <p style="color: #f1e6f4; font-size: 0.98rem; max-width: 720px; line-height: 1.6;">
+              Domestic modesty is dead. Step into the provocative realm where the wife reigns supreme, husband and lover kneel in devotion, and men exist solely to facilitate her pleasure.
             </p>
           </div>
-          <button class="btn btn-gold" onclick="app.navigate('code')" style="white-space: nowrap;">
-            Open The Decoder & Guide →
+          <button class="btn btn-goddess" onclick="app.navigate('goddess')" style="white-space: nowrap; font-size: 1rem;">
+            Step Onto The Altar →
           </button>
         </div>
       </div>
 
-      <!-- THE BULL & LOVER PERSPECTIVE SECTION (Seductive Image Curation) -->
+      <!-- THE BULL & LOVER PERSPECTIVE SECTION -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Unfiltered Encounters & Reverence</span>
@@ -867,7 +967,7 @@
         </div>
       </div>
 
-      <!-- HOTWIFE FACTS GALLERY (High-Seduction Curated Imagery) -->
+      <!-- HOTWIFE FACTS GALLERY -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Visual Truths & Provocations</span>
@@ -907,8 +1007,119 @@
     </section>
 
     <!-- ========================================================================
-         VIEW: THE CODE & JEWELS (THE COMPLETE LIFESTYLE DECODER)
+         VIEW: THE GODDESS COMPLEX (DEDICATED WIFE-CENTRIC SUPREMACY PAGE)
          ======================================================================== -->
+    <section id="view-goddess" class="view-section">
+      <div class="container">
+        
+        <!-- Seductive Flagship Hero -->
+        <div class="goddess-hero" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=80');">
+          <div class="goddess-hero-content">
+            <span class="fact-pill" style="background: rgba(225, 29, 72, 0.4); border-color: #f43f5e; color: #fff;">
+              👑 THE GODDESS COMPLEX • FEMALE SOVEREIGNTY
+            </span>
+            <h1 style="font-family: var(--font-display); font-size: clamp(2.4rem, 5.5vw, 4.4rem); font-weight: 900; line-height: 1.05; text-transform: uppercase; margin: 14px 0 18px; color: #fff;">
+              She Is Not His Equal.<br>
+              <span style="background: linear-gradient(135deg, #fff 20%, #f43f5e 60%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">She Is His Ruler.</span>
+            </h1>
+            <p style="font-size: 1.15rem; color: #f2e9f6; line-height: 1.65; max-width: 680px; margin-bottom: 24px;">
+              Domestic modesty is a cage designed for ordinary women. On this altar, female sexuality is an absolute weapon of authority. Two men, zero shame, and complete obedience to her appetite.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button class="btn btn-goddess" onclick="document.getElementById('altar-gallery').scrollIntoView({ behavior: 'smooth' })">
+                View The Altar Gallery ↓
+              </button>
+              <button class="btn btn-secondary" onclick="app.nextDecree()">
+                ⚡ Reveal Her Royal Decree
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hitting Seductive Interactive Decree Widget -->
+        <div class="commandment-box">
+          <span class="section-tag crimson" style="margin-bottom: 6px;">LIVE DECREE FROM THE QUEEN</span>
+          <h3 id="decreeTitle" style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.3rem, 2.8vw, 1.9rem); color: #fff; margin-bottom: 12px;">
+            "A husband provides the lifestyle and carries the bags. A lover satisfies the craving. Neither is entitled to question my desires."
+          </h3>
+          <p id="decreeSub" style="color: #f5d0fe; font-size: 0.9rem; margin-bottom: 20px;">
+            — Decree #01: The Divine Division of Male Labor
+          </p>
+          <button class="btn btn-secondary btn-sm" style="border-color: #f43f5e; color: #fff;" onclick="app.nextDecree()">
+            Next Decree →
+          </button>
+        </div>
+
+        <!-- The 4 Pillars of Male Diminishment & Goddess Worship -->
+        <div class="section-header" style="margin-top: 10px;">
+          <span class="section-tag crimson">Subjugation & Worship</span>
+          <h2 class="section-h2">The 4 Truths of The Worshipped Wife</h2>
+        </div>
+
+        <div class="goddess-altar-grid" id="altar-gallery">
+          
+          <!-- Truth 1: The Provider's Subservience -->
+          <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80');">
+            <div class="goddess-altar-body">
+              <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 01 • THE HUSBAND'S ROLE</span>
+              <h3 class="goddess-altar-title">He Pays. He Steps Aside.</h3>
+              <p class="goddess-altar-text">
+                Her husband pays for the bespoke gowns, the suites, and the cocktails—not as a favor, but as his basic duty to honor her beauty. He steps aside, holds the door, and knows his place is to facilitate her pleasure without asking for anything in return.
+              </p>
+              <div style="font-size: 0.8rem; color: #f43f5e; font-weight: 700;">
+                "His reward is simply being permitted to worship her afterglow."
+              </div>
+            </div>
+          </div>
+
+          <!-- Truth 2: The Lover's Disposable Function -->
+          <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80');">
+            <div class="goddess-altar-body">
+              <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 02 • THE BULL'S UTILITY</span>
+              <h3 class="goddess-altar-title">Men Are Tools of Ecstasy</h3>
+              <p class="goddess-altar-text">
+                The lover exists for one singular purpose: to service her insatiable appetite. He possesses no ownership, no rights, and no say. He is invited into her royal presence on her schedule, and dismissed the instant she is satisfied.
+              </p>
+              <div style="font-size: 0.8rem; color: #f43f5e; font-weight: 700;">
+                "She takes his strength, his sweat, and his stamina, then returns home untouchable."
+              </div>
+            </div>
+          </div>
+
+          <!-- Truth 3: The Death of Male Pride -->
+          <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=1000&q=80');">
+            <div class="goddess-altar-body">
+              <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 03 • BROKEN EGOS</span>
+              <h3 class="goddess-altar-title">Fragile Egos Broken At Her Feet</h3>
+              <p class="goddess-altar-text">
+                Patriarchal monogamy conditioned men to believe they own a woman. Here, male pride is erased. Watching her being thoroughly adored and possessed by a younger, stronger lover forces the husband into complete psychological surrender.
+              </p>
+              <div style="font-size: 0.8rem; color: #f43f5e; font-weight: 700;">
+                "A real goddess doesn't soothe a man's ego—she breaks it and demands his grateful smile."
+              </div>
+            </div>
+          </div>
+
+          <!-- Truth 4: Absolute Feminine Sovereignty -->
+          <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80');">
+            <div class="goddess-altar-body">
+              <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 04 • UNAPOLOGETIC POWER</span>
+              <h3 class="goddess-altar-title">Her Body, Her Decrees</h3>
+              <p class="goddess-altar-text">
+                Guilt is for ordinary wives. She dresses for her own gaze, flirts with whoever catches her eye, and allows two men to cater to her existence. Her marriage is not a contract of restraint—it is the kingdom she rules with absolute authority.
+              </p>
+              <div style="font-size: 0.8rem; color: #f43f5e; font-weight: 700;">
+                "Two men under her command. One bed under her reign."
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW: THE CODE & JEWELS (THE COMPLETE LIFESTYLE DECODER) -->
     <section id="view-code" class="view-section">
       <div class="container">
         
@@ -929,7 +1140,7 @@
           </div>
         </div>
 
-        <!-- PART 1: THE SECRET JEWELRY DECODER (Hardcore Seductive Imagery) -->
+        <!-- PART 1: THE SECRET JEWELRY DECODER -->
         <div id="part-jewels" style="margin-bottom: 24px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             💎 Part I: The Jewelry Decoder
@@ -1104,7 +1315,6 @@
 
           <div class="protocol-grid">
             
-            <!-- Protocol 01: The Permission Shift -->
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1121,7 +1331,6 @@
               </div>
             </div>
 
-            <!-- Protocol 02: Movement & Schedule Control -->
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1138,7 +1347,6 @@
               </div>
             </div>
 
-            <!-- Protocol 03: Casual Decision Override -->
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1155,7 +1363,6 @@
               </div>
             </div>
 
-            <!-- Protocol 04: Public Claiming & Body Language -->
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1172,7 +1379,6 @@
               </div>
             </div>
 
-            <!-- Protocol 05: Her Total Feminine Surrender -->
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1189,7 +1395,6 @@
               </div>
             </div>
 
-            <!-- Protocol 06: The Husband's Disarmed Demotion -->
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1383,15 +1588,15 @@
     <button class="mobile-nav-item active" data-view="home" onclick="app.navigate('home')">
       <span>✨</span><span>Home</span>
     </button>
+    <button class="mobile-nav-item" data-view="goddess" onclick="app.navigate('goddess')">
+      <span>👑</span><span>Goddess</span>
+    </button>
+    <button class="mobile-create-btn" onclick="app.checkAuthAndDo(() => app.openModal('createModal'))">+</button>
     <button class="mobile-nav-item" data-view="code" onclick="app.navigate('code')">
       <span>💎</span><span>The Code</span>
     </button>
-    <button class="mobile-create-btn" onclick="app.checkAuthAndDo(() => app.openModal('createModal'))">+</button>
     <button class="mobile-nav-item" data-view="feed" onclick="app.navigate('feed')">
       <span>💬</span><span>Feed</span>
-    </button>
-    <button class="mobile-nav-item" data-view="rooms" onclick="app.navigate('rooms')">
-      <span>🏛️</span><span>Rooms</span>
     </button>
   </nav>
 
@@ -1433,6 +1638,25 @@
       }
     ];
 
+    const GODDESS_DECREES = [
+      {
+        decree: "A husband provides the lifestyle and carries the bags. A lover satisfies the craving. Neither is entitled to question my desires.",
+        sub: "— Decree #01: The Divine Division of Male Labor"
+      },
+      {
+        decree: "Men were made to compete. When two men exist to satisfy one queen, the universe is in proper alignment.",
+        sub: "— Decree #02: Breaking Monogamy's Chains"
+      },
+      {
+        decree: "My body is not marital property. It is a private sanctuary leased out strictly by my permission.",
+        sub: "— Decree #03: Female Sovereignty Declared"
+      },
+      {
+        decree: "The husband finances the crown; the lover polishes the jewels. I simply sit on the throne and smile.",
+        sub: "— Decree #04: The Two-Man Kingdom"
+      }
+    ];
+
     const INITIAL_ROOMS = [
       { id: "bull", name: "The Bull & Lover Perspective", desc: "For thirds and bulls to share encounters, respect, and experiences with hotwives & MILFs.", icon: "🐂" },
       { id: "curious", name: "Married & Curious", desc: "Taking initial steps and discussing fantasies safely.", icon: "💍" },
@@ -1467,6 +1691,7 @@
     class App {
       constructor() {
         this.factIndex = 0;
+        this.decreeIndex = 0;
         this.currentFilter = "all";
       }
 
@@ -1493,6 +1718,17 @@
         document.querySelectorAll(".nav-link").forEach(l => l.classList.toggle("active", l.getAttribute("data-view") === viewName));
         document.querySelectorAll(".mobile-nav-item").forEach(l => l.classList.toggle("active", l.getAttribute("data-view") === viewName));
         window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      nextDecree() {
+        this.decreeIndex = (this.decreeIndex + 1) % GODDESS_DECREES.length;
+        const current = GODDESS_DECREES[this.decreeIndex];
+        const titleEl = document.getElementById("decreeTitle");
+        const subEl = document.getElementById("decreeSub");
+        if (titleEl && subEl) {
+          titleEl.textContent = `"${current.decree}"`;
+          subEl.textContent = current.sub;
+        }
       }
 
       setPlaybookTab(tabKey, btn) {
