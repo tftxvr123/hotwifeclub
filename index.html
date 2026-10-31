@@ -1,5 +1,3 @@
-  
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +27,7 @@
       --neon-pink-glow: rgba(255, 31, 128, 0.35);
       --electric-purple: #9d3bf5;
       --gold-accent: #f59e0b;
+      --gold-glow: rgba(245, 158, 11, 0.35);
       
       --text-main: #fcfcff;
       --text-muted: #9e9eb4;
@@ -116,6 +115,17 @@
       background: #1b1b26;
     }
 
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-weight: 800;
+      box-shadow: 0 4px 18px var(--gold-glow);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.6);
+    }
+
     .btn-sm { padding: 8px 18px; font-size: 0.82rem; }
 
     /* ==========================================================================
@@ -125,7 +135,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(5, 5, 7, 0.88);
+      background: rgba(5, 5, 7, 0.92);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -145,13 +155,15 @@
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
     }
-    .desktop-nav { display: none; align-items: center; gap: 26px; }
-    @media (min-width: 900px) { .desktop-nav { display: flex; } }
-    .nav-link { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; }
+    .desktop-nav { display: none; align-items: center; gap: 22px; }
+    @media (min-width: 960px) { .desktop-nav { display: flex; } }
+    .nav-link { color: var(--text-muted); font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--neon-pink); }
+    .nav-link.gold-link { color: var(--gold-accent); }
+    .nav-link.gold-link:hover, .nav-link.gold-link.active { color: #fde68a; }
 
     /* ==========================================================================
-       PHOTO-HEAVY HERO
+       HERO SPLIT
        ========================================================================== */
     .hero-split {
       padding: 40px 0 60px;
@@ -240,9 +252,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    /* ==========================================================================
-       SECTIONS & HEADERS
-       ========================================================================== */
+    /* Section Headers */
     .section-header {
       text-align: center;
       margin: 70px 0 36px;
@@ -256,22 +266,20 @@
       margin-bottom: 8px;
       display: block;
     }
+    .section-tag.gold { color: var(--gold-accent); }
     .section-h2 {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 800;
     }
 
-    /* ==========================================================================
-       NEW: THE BULL & LOVER PERSPECTIVE GRID (EXPERIENCES WITH A MILF / HOTWIFE)
-       ========================================================================== */
+    /* Lover Stories Grid */
     .lover-stories-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 24px;
       margin-bottom: 70px;
     }
-
     .lover-story-card {
       position: relative;
       border-radius: var(--radius-lg);
@@ -298,14 +306,7 @@
       border-color: var(--neon-pink);
       box-shadow: 0 14px 40px rgba(255, 31, 128, 0.3);
     }
-    .lover-story-card:hover::before {
-      background: linear-gradient(180deg, rgba(5,5,7,0.05) 0%, rgba(9,9,14,0.7) 45%, #060609 100%);
-    }
-
-    .lover-content {
-      position: relative;
-      z-index: 2;
-    }
+    .lover-content { position: relative; z-index: 2; }
     .lover-badge {
       display: inline-flex;
       align-items: center;
@@ -328,7 +329,6 @@
       color: #fff;
       line-height: 1.4;
       margin-bottom: 10px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
     .lover-narrative {
       font-size: 0.88rem;
@@ -353,7 +353,6 @@
       gap: 24px;
       margin-bottom: 60px;
     }
-
     .fact-card {
       position: relative;
       min-height: 480px;
@@ -366,7 +365,7 @@
       border: 1px solid var(--border-subtle);
       background-size: cover;
       background-position: center;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .fact-card::before {
       content: '';
@@ -374,11 +373,7 @@
       inset: 0;
       background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(9,9,14,0.7) 40%, #08080d 100%);
     }
-    .fact-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--neon-pink);
-      box-shadow: 0 12px 35px rgba(255, 31, 128, 0.28);
-    }
+    .fact-card:hover { transform: translateY(-5px); border-color: var(--neon-pink); }
     .fact-card-body { position: relative; z-index: 2; }
     .fact-card-number {
       font-family: var(--font-display);
@@ -396,13 +391,185 @@
       line-height: 1.4;
       color: #fff;
       margin-bottom: 12px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
-    .fact-card-sub {
-      font-size: 0.85rem;
-      color: #bfbfd4;
+    .fact-card-sub { font-size: 0.85rem; color: #bfbfd4; line-height: 1.5; margin-bottom: 16px; }
+
+    /* ==========================================================================
+       NEW: JEWELRY DECODER & MANNERISMS LOOKBOOK (THE CODE)
+       ========================================================================== */
+    .jewels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .jewel-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 510px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      background-size: cover;
+      background-position: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+    .jewel-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(12,10,18,0.75) 45%, #07060a 100%);
+    }
+    .jewel-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 14px 45px var(--gold-glow);
+    }
+    .jewel-content { position: relative; z-index: 2; }
+    .jewel-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .jewel-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .jewel-meaning {
+      font-size: 0.88rem;
+      color: #e5e5f0;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    /* Mannerisms Two-Way Playbook */
+    .mannerisms-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 34px 26px;
+      margin-bottom: 70px;
+    }
+
+    .playbook-tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .playbook-tab-btn {
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.2s;
+    }
+    .playbook-tab-btn.active {
+      background: linear-gradient(135deg, var(--gold-accent), #d97706);
+      color: #000;
+      border-color: var(--gold-accent);
+      box-shadow: 0 4px 18px var(--gold-glow);
+    }
+
+    .cue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+    .cue-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      transition: border-color 0.25s;
+    }
+    .cue-card:hover { border-color: var(--gold-accent); }
+    .cue-step {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .cue-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .cue-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Curated Luxury Boutique / Lookbook (Option C) */
+    .boutique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 22px;
+      margin-bottom: 70px;
+    }
+    .boutique-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .boutique-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+    }
+    .boutique-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .boutique-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.8);
+      border: 1px solid var(--gold-accent);
+      color: var(--gold-accent);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+    .boutique-info { padding: 20px; }
+    .boutique-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .boutique-curation {
+      font-size: 0.82rem;
+      color: var(--text-muted);
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     /* Views */
@@ -481,7 +648,7 @@
   </div>
 
   <!-- ========================================================================
-       HEADER
+       HEADER (Includes Link to "The Code & Jewels")
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -492,6 +659,7 @@
 
       <nav class="desktop-nav">
         <a href="#home" class="nav-link active" data-view="home" onclick="app.navigate('home')">Home</a>
+        <a href="#code" class="nav-link gold-link" data-view="code" onclick="app.navigate('code')">✨ The Code & Jewels</a>
         <a href="#feed" class="nav-link" data-view="feed" onclick="app.navigate('feed')">Discussions</a>
         <a href="#confessions" class="nav-link" data-view="confessions" onclick="app.navigate('confessions')">Confessions</a>
         <a href="#rooms" class="nav-link" data-view="rooms" onclick="app.navigate('rooms')">Rooms</a>
@@ -534,8 +702,8 @@
               <button class="btn btn-primary" onclick="app.checkAuthAndDo(() => app.navigate('feed'))">
                 Explore The Community
               </button>
-              <button class="btn btn-secondary" onclick="app.nextHeroFact()">
-                ⚡ Next Hotwife Fact
+              <button class="btn btn-gold" onclick="app.navigate('code')">
+                ✨ Learn The Secret Signals & Jewels
               </button>
             </div>
           </div>
@@ -556,9 +724,25 @@
         </div>
       </div>
 
-      <!-- ====================================================================
-           NEW SECTION: THE BULL & LOVER PERSPECTIVE (EXPERIENCES WITH A MILF / HOTWIFE)
-           ==================================================================== -->
+      <!-- TEASER BANNER: THE SECRET CODE & JEWELS -->
+      <div class="container">
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(157, 59, 245, 0.15)); border: 1px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 36px 28px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 20px;">
+          <div>
+            <span class="section-tag gold">NEW • THE COMPLETE LOOKBOOK</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 8px;">
+              The Secret Language: Jewelry, Anklets & Seduction Cues
+            </h3>
+            <p style="color: #d1d1e4; font-size: 0.95rem; max-width: 680px;">
+              From the <strong>Left Anklet</strong> and the <strong>Wedding Ring Paradox</strong> to reading eye contact across luxury hotel lounges—master how to hint, how to catch hints, and what each piece means.
+            </p>
+          </div>
+          <button class="btn btn-gold" onclick="app.navigate('code')" style="white-space: nowrap;">
+            Open The Decoder & Guide →
+          </button>
+        </div>
+      </div>
+
+      <!-- THE BULL & LOVER PERSPECTIVE SECTION -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Unfiltered Encounters & Reverence</span>
@@ -569,8 +753,6 @@
         </div>
 
         <div class="lover-stories-grid">
-
-          <!-- Lover Story 1: Confidence & Zero Games -->
           <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80');">
             <div class="lover-content">
               <span class="lover-badge">🐂 Third / Bull Recap</span>
@@ -585,7 +767,6 @@
             </div>
           </div>
 
-          <!-- Lover Story 2: The Husband Connection -->
           <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80');">
             <div class="lover-content">
               <span class="lover-badge">🐂 Date Night Recap</span>
@@ -600,7 +781,6 @@
             </div>
           </div>
 
-          <!-- Lover Story 3: Worshipping The Queen -->
           <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=80');">
             <div class="lover-content">
               <span class="lover-badge">🐂 Real Encounter</span>
@@ -614,17 +794,10 @@
               </div>
             </div>
           </div>
-
-        </div>
-
-        <div style="text-align: center; margin-top: -30px; margin-bottom: 60px;">
-          <button class="btn btn-secondary" onclick="app.filterFeedByLover()">
-            Read All Bull & Lover Recaps (32+) →
-          </button>
         </div>
       </div>
 
-      <!-- PHOTO SECTION: THE HOTWIFE FACTS GALLERY -->
+      <!-- HOTWIFE FACTS GALLERY -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Visual Truths & Provocations</span>
@@ -632,7 +805,6 @@
         </div>
 
         <div class="facts-photo-grid">
-
           <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80');">
             <div class="fact-card-body">
               <span class="fact-card-number">Hotwife Fact #07</span>
@@ -659,10 +831,246 @@
               <button class="btn btn-secondary btn-sm" onclick="app.navigate('feed')">Explore Confessions</button>
             </div>
           </div>
-
         </div>
       </div>
 
+    </section>
+
+    <!-- ========================================================================
+         VIEW: THE CODE & JEWELS (THE COMPLETE LIFESTYLE DECODER & MANNERISMS)
+         ======================================================================== -->
+    <section id="view-code" class="view-section">
+      <div class="container">
+        
+        <!-- Header -->
+        <div class="section-header" style="margin-top: 10px;">
+          <span class="section-tag gold">The Official Lifestyle Manual</span>
+          <h1 class="section-h2" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px;">
+            The Secret Code: Jewelry, Signals & Mannerisms
+          </h1>
+          <p style="color: var(--text-muted); font-size: 1rem; max-width: 720px; margin: 0 auto;">
+            The complete visual decoder for hotwives, husbands, and admirers. Learn how to hint, how to read non-verbal invitations, and the meaning behind every piece of lifestyle jewelry.
+          </p>
+        </div>
+
+        <!-- PART 1: THE SECRET JEWELRY DECODER -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
+            💎 Part I: The Jewelry Decoder
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">The essential markers worn in public to signal availability, devotion, and erotic freedom.</p>
+        </div>
+
+        <div class="jewels-grid">
+          
+          <!-- Jewel 1: The Left Anklet -->
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80');">
+            <div class="jewel-content">
+              <span class="jewel-tag">Primary Indicator</span>
+              <h4 class="jewel-title">The Left Anklet</h4>
+              <p class="jewel-meaning">
+                <strong>Placement:</strong> Worn strictly on the <em>left ankle</em>. Traditionally signals that a woman is in a committed, married relationship, but has explicit permission to be approached and pursued by other men.
+              </p>
+              <p style="font-size: 0.82rem; color: var(--gold-accent);">
+                ✨ <strong>Style Code:</strong> Delicate 14K gold snake chain, often paired with high heels or barefoot at upscale resorts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jewel 2: The Wedding Ring Paradox -->
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80');">
+            <div class="jewel-content">
+              <span class="jewel-tag">The Taboo Keystone</span>
+              <h4 class="jewel-title">The Wedding Ring Paradox</h4>
+              <p class="jewel-meaning">
+                <strong>The Rule:</strong> The wedding diamond stays on during every date. It is never removed or hidden. It visually reminds the lover that she is completely cherished at home, elevating the forbidden psychological rush.
+              </p>
+              <p style="font-size: 0.82rem; color: var(--gold-accent);">
+                ✨ <strong>Psychological Impact:</strong> Transforms casual sex into an elite, consensual taboo worship ritual.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jewel 3: Queen of Spades & Spade Motifs -->
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80');">
+            <div class="jewel-content">
+              <span class="jewel-tag">The QOS Symbol</span>
+              <h4 class="jewel-title">Queen of Spades Motif</h4>
+              <p class="jewel-meaning">
+                <strong>The Symbol:</strong> A subtle spade charm on a bracelet, pendant, or anklet. It is the international symbol of hotwife adoration, explicitly indicating that the woman and husband actively participate in the lifestyle.
+              </p>
+              <p style="font-size: 0.82rem; color: var(--gold-accent);">
+                ✨ <strong>Discreet Tip:</strong> Can be worn as a minimalist black onyx spade charm, subtle enough to pass unnoticed by outsiders.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jewel 4: Toe Rings & Barefoot Lounging -->
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');">
+            <div class="jewel-content">
+              <span class="jewel-tag">Resort & Summer Code</span>
+              <h4 class="jewel-title">Sensual Toe Rings</h4>
+              <p class="jewel-meaning">
+                <strong>Placement:</strong> Second toe of the left foot, paired with the left anklet. At beachfront clubs and hotel cabanas, this draws the eyes downward, highlighting feminine poise and inviting respectful flirtation.
+              </p>
+              <p style="font-size: 0.82rem; color: var(--gold-accent);">
+                ✨ <strong>Vibe:</strong> Uninhibited body confidence and playful summer seduction.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jewel 5: Lock & Key Necklaces -->
+          <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80');">
+            <div class="jewel-content">
+              <span class="jewel-tag">Bond & Permission</span>
+              <h4 class="jewel-title">Lock & Key Jewelry</h4>
+              <p class="jewel-meaning">
+                <strong>Dynamic:</strong> The wife wears an ornate miniature padlock charm around her neck or wrist, while the husband wears or holds the miniature key—symbolizing that she is unlocked only with his blessing.
+              </p>
+              <p style="font-size: 0.82rem; color: var(--gold-accent);">
+                ✨ <strong>Significance:</strong> Deep marital trust, surrender, and shared erotic sovereignty.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PART 2: THE TWO-WAY MANNERISMS PLAYBOOK -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
+            🥂 Part II: The Mannerisms Field Guide
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">How to send the signals, how the husband confirms the green-light, and how the lover approaches smoothly.</p>
+        </div>
+
+        <div class="mannerisms-container">
+          <div class="playbook-tabs">
+            <button class="playbook-tab-btn active" onclick="app.setPlaybookTab('wife', this)">👑 For Her: How To Hint</button>
+            <button class="playbook-tab-btn" onclick="app.setPlaybookTab('husband', this)">🥂 For Him: The Green Light</button>
+            <button class="playbook-tab-btn" onclick="app.setPlaybookTab('lover', this)">🐂 For The Admirer: How To Read It</button>
+          </div>
+
+          <!-- Wife Mannerisms -->
+          <div id="playbook-wife" class="playbook-content">
+            <div class="cue-grid">
+              <div class="cue-card">
+                <span class="cue-step">Mannerism 01</span>
+                <h4 class="cue-title">The Crossed-Leg Reveal</h4>
+                <p class="cue-desc">When seated at a lounge or bar, cross your left leg over the right, deliberately drawing focus to the left anklet and your heels. Allow your foot to dangle slightly to create subtle movement.</p>
+              </div>
+              <div class="cue-card">
+                <span class="cue-step">Mannerism 02</span>
+                <h4 class="cue-title">The Ring-Twirl & Gaze</h4>
+                <p class="cue-desc">Make 3 seconds of direct eye contact with the man you find attractive, then slowly spin your wedding band with your thumb while keeping a slight, knowing smile. It broadcasts: <em>"I'm married, and I know what you're thinking."</em></p>
+              </div>
+              <div class="cue-card">
+                <span class="cue-step">Mannerism 03</span>
+                <h4 class="cue-title">The Solo Bar Transition</h4>
+                <p class="cue-desc">Leave the table where your husband is seated and walk gracefully to the bar to order a drink solo. This gives the interested man a low-pressure window to initiate conversation without awkwardness.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Husband Mannerisms -->
+          <div id="playbook-husband" class="playbook-content" style="display: none;">
+            <div class="cue-grid">
+              <div class="cue-card">
+                <span class="cue-step">Husband Signal 01</span>
+                <h4 class="cue-title">The Generous Step-Back</h4>
+                <p class="cue-desc">When you notice another man admiring your wife, excuse yourself to make a call or visit the restroom. Leaving her open for 5–10 minutes gives the admirer the clear runway to make his approach.</p>
+              </div>
+              <div class="cue-card">
+                <span class="cue-step">Husband Signal 02</span>
+                <h4 class="cue-title">The Reassuring Nod</h4>
+                <p class="cue-desc">If the lover catches your eye while speaking to your wife, do not glare. A relaxed, confident smile or a subtle nod across the lounge signals absolute security and uninhibited approval.</p>
+              </div>
+              <div class="cue-card">
+                <span class="cue-step">Husband Signal 03</span>
+                <h4 class="cue-title">The Warm Re-Entry</h4>
+                <p class="cue-desc">When returning to the table, introduce yourself politely with your first name. Do not act territorial. Treat the lover like a guest of honor invited to admire your queen.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lover/Bull Mannerisms -->
+          <div id="playbook-lover" class="playbook-content" style="display: none;">
+            <div class="cue-grid">
+              <div class="cue-card">
+                <span class="cue-step">Decoding 01</span>
+                <h4 class="cue-title">The 3-Second Eye Contact Rule</h4>
+                <p class="cue-desc">If a gorgeous married woman holds your gaze for longer than 3 seconds twice, she is not being accidental. Look downward to verify the left anklet or the wedding ring before making your move.</p>
+              </div>
+              <div class="cue-card">
+                <span class="cue-step">Decoding 02</span>
+                <h4 class="cue-title">The Compliment Opening</h4>
+                <p class="cue-desc">Never open with vulgar pickup lines. Walk up and say: <em>"Excuse me, I couldn't help but notice your anklet—it looks stunning on you."</em> Her reaction will tell you immediately if she is in the lifestyle.</p>
+              </div>
+              <div class="cue-card">
+                <span class="cue-step">Decoding 03</span>
+                <h4 class="cue-title">Respecting The Dynamic</h4>
+                <p class="cue-desc">Always acknowledge the husband with high respect if he is nearby. A true bull understands that his access to the hotwife is a shared privilege granted by their mutual love and trust.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PART 3: CURATED LUXURY LOOKBOOK & BOUTIQUE (OPTION C) -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
+            🛍️ Part III: The Luxury Lookbook & Styling Curation
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Curated jewelry and styling recommendations for the discerning hotwife.</p>
+        </div>
+
+        <div class="boutique-grid">
+          
+          <div class="boutique-card">
+            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80');">
+              <span class="boutique-badge">ESSENTIAL</span>
+            </div>
+            <div class="boutique-info">
+              <h4 class="boutique-name">14K Solid Gold Diamond Cut Anklet</h4>
+              <p class="boutique-curation">Ultra-delicate Italian gold chain designed to catch the ambient candlelight of hotel lounges. Sleek, durable, and unmistakably feminine.</p>
+              <button class="btn btn-secondary btn-sm" style="width: 100%; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="alert('Item details: Recommended 9-inch length, 14k yellow gold with lobster clasp.')">View Styling Notes</button>
+            </div>
+          </div>
+
+          <div class="boutique-card">
+            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80');">
+              <span class="boutique-badge">DISCREET LUXURY</span>
+            </div>
+            <div class="boutique-info">
+              <h4 class="boutique-name">Midnight Onyx Spade Pendant</h4>
+              <p class="boutique-curation">Hand-carved natural black onyx set in a fine gold bezel. Worn at collarbone height for subtle recognition among those in the know.</p>
+              <button class="btn btn-secondary btn-sm" style="width: 100%; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="alert('Item details: Minimalist 10mm stone pendant with 18-inch adjustable chain.')">View Styling Notes</button>
+            </div>
+          </div>
+
+          <div class="boutique-card">
+            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80');">
+              <span class="boutique-badge">THE DATE NIGHT HEEL</span>
+            </div>
+            <div class="boutique-info">
+              <h4 class="boutique-name">Minimalist Barely-There Stiletto</h4>
+              <p class="boutique-curation">Strappy 100mm heels with ankle strap spacing tailored to frame the left anklet without covering the chain. The quintessential date-night footwear.</p>
+              <button class="btn btn-secondary btn-sm" style="width: 100%; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="alert('Item details: Open-toe design specifically chosen to showcase anklets and toe rings.')">View Styling Notes</button>
+            </div>
+          </div>
+
+          <div class="boutique-card">
+            <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80');">
+              <span class="boutique-badge">SIGNATURE TABOO</span>
+            </div>
+            <div class="boutique-info">
+              <h4 class="boutique-name">Emerald-Cut Diamond Eternity Band</h4>
+              <p class="boutique-curation">The centerpiece of the entire dynamic. Worn proudly on the left ring finger while hand-in-hand with someone new.</p>
+              <button class="btn btn-secondary btn-sm" style="width: 100%; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="alert('Item details: Platinum or white gold band with continuous emerald-cut stones.')">View Styling Notes</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
     <!-- VIEW 2: FEED DISCUSSIONS -->
@@ -676,7 +1084,7 @@
           <button class="btn btn-primary btn-sm" onclick="app.openModal('createModal')">+ Post</button>
         </div>
 
-        <!-- Filter tabs including Lover/Bull filter -->
+        <!-- Filter tabs -->
         <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 6px;">
           <button class="tab-btn active" id="filterAll" onclick="app.filterFeed('all')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">All</button>
           <button class="tab-btn" id="filterLover" onclick="app.filterFeed('lover')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">🐂 Lover / Bull Stories</button>
@@ -699,7 +1107,7 @@
       </div>
     </section>
 
-    <!-- VIEW 4: ROOMS (NOW WITH 7 INITIAL ROOMS INCLUDING THE BULL & LOVER PERSPECTIVE) -->
+    <!-- VIEW 4: ROOMS -->
     <section id="view-rooms" class="view-section">
       <div class="container">
         <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 20px;">Club Rooms</h2>
@@ -755,7 +1163,6 @@
     </div>
   </div>
 
-  <!-- CREATE POST MODAL WITH LOVER OPTION -->
   <div id="createModal" class="modal-overlay">
     <div class="modal-card">
       <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted);" onclick="app.closeModal('createModal')">✕</button>
@@ -776,20 +1183,20 @@
     </div>
   </div>
 
-  <!-- Mobile Bottom Nav -->
+  <!-- Mobile Bottom Nav (Includes Code & Jewels Icon) -->
   <nav class="mobile-bottom-nav">
     <button class="mobile-nav-item active" data-view="home" onclick="app.navigate('home')">
       <span>✨</span><span>Home</span>
     </button>
+    <button class="mobile-nav-item" data-view="code" onclick="app.navigate('code')">
+      <span>💎</span><span>The Code</span>
+    </button>
+    <button class="mobile-create-btn" onclick="app.checkAuthAndDo(() => app.openModal('createModal'))">+</button>
     <button class="mobile-nav-item" data-view="feed" onclick="app.navigate('feed')">
       <span>💬</span><span>Feed</span>
     </button>
-    <button class="mobile-create-btn" onclick="app.checkAuthAndDo(() => app.openModal('createModal'))">+</button>
     <button class="mobile-nav-item" data-view="rooms" onclick="app.navigate('rooms')">
       <span>🏛️</span><span>Rooms</span>
-    </button>
-    <button class="mobile-nav-item" data-view="confessions" onclick="app.navigate('confessions')">
-      <span>🎭</span><span>Confess</span>
     </button>
   </nav>
 
@@ -893,6 +1300,15 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
+      setPlaybookTab(tabKey, btn) {
+        document.querySelectorAll(".playbook-content").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".playbook-tab-btn").forEach(el => el.classList.remove("active"));
+        
+        const target = document.getElementById(`playbook-${tabKey}`);
+        if (target) target.style.display = "block";
+        if (btn) btn.classList.add("active");
+      }
+
       checkAgeGate() {
         const modal = document.getElementById("ageGateModal");
         if (!localStorage.getItem("hwc_age")) modal.classList.add("active");
@@ -946,101 +1362,4 @@
 
       filterFeed(type) {
         this.currentFilter = type;
-        document.querySelectorAll(".tab-btn").forEach(btn => {
-          btn.style.background = "var(--bg-card)";
-          btn.style.color = "var(--text-muted)";
-        });
-        const activeBtn = document.getElementById(type === "all" ? "filterAll" : (type === "lover" ? "filterLover" : "filterWife"));
-        if (activeBtn) {
-          activeBtn.style.background = "var(--neon-pink)";
-          activeBtn.style.color = "#fff";
-        }
-        this.renderPosts();
-      }
-
-      filterFeedByLover() {
-        this.navigate("feed");
-        this.filterFeed("lover");
-      }
-
-      renderRooms() {
-        const grid = document.getElementById("clubRoomsGrid");
-        grid.innerHTML = INITIAL_ROOMS.map(r => `
-          <div style="background:var(--bg-card); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
-            <div style="font-size:1.8rem; margin-bottom:8px;">${r.icon}</div>
-            <h3 style="font-family:var(--font-display); font-size:1.15rem; margin-bottom:6px;">${r.name}</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">${r.desc}</p>
-            <button class="btn btn-secondary btn-sm" onclick="app.navigate('feed')">Enter Room</button>
-          </div>
-        `).join('');
-      }
-
-      renderPosts() {
-        const container = document.getElementById("postsFeedContainer");
-        let posts = SAMPLE_POSTS;
-        if (this.currentFilter !== "all") {
-          posts = posts.filter(p => p.category === this.currentFilter);
-        }
-
-        container.innerHTML = posts.map(p => `
-          <div style="background:var(--bg-card); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); margin-bottom:14px;">
-            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-              <span style="font-weight:700; color:var(--text-main);">@${p.author}</span>
-              <span style="color:var(--neon-pink); font-size:0.75rem; font-weight:700;">${p.tag}</span>
-            </div>
-            <p style="font-size:0.95rem; line-height:1.6; color:#dcdce8;">${p.content}</p>
-          </div>
-        `).join('');
-      }
-
-      renderConfessions() {
-        const container = document.getElementById("confessionsContainer");
-        container.innerHTML = `
-          <div style="background:var(--bg-card); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); margin-bottom:14px;">
-            <div style="color:var(--gold-accent); font-size:0.75rem; font-weight:700; margin-bottom:6px;">🎭 Anonymous Confession #410</div>
-            <p style="font-size:0.95rem; line-height:1.6;">"I was terrified to bring up my fantasies to my husband. When he smiled, squeezed my thigh, and said 'Tell me everything you've dreamed of,' ten years of tension dissolved instantly."</p>
-          </div>
-        `;
-      }
-
-      renderDaily() {
-        const card = document.getElementById("dailyPollCard");
-        card.innerHTML = `
-          <h3 style="font-family:var(--font-display); font-size:1.2rem; margin-bottom:14px;">"What is the most compelling aspect of being with an experienced Hotwife / MILF?"</h3>
-          <button class="btn btn-secondary btn-sm" style="width:100%; justify-content:space-between; margin-bottom:8px;" onclick="alert('Voted!')">
-            <span>Her unapologetic body confidence & maturity</span>
-            <span>64%</span>
-          </button>
-          <button class="btn btn-secondary btn-sm" style="width:100%; justify-content:space-between;" onclick="alert('Voted!')">
-            <span>The thrill of her husband's compersion & blessing</span>
-            <span>36%</span>
-          </button>
-        `;
-      }
-
-      handleCreateSubmit(e) {
-        e.preventDefault();
-        const cat = document.getElementById("createPostCategory").value;
-        const text = document.getElementById("createText").value.trim();
-        const user = localStorage.getItem("hwc_user") || "Lover_Guest";
-
-        SAMPLE_POSTS.unshift({
-          category: cat,
-          author: user,
-          tag: cat === "lover" ? "🐂 Bull Perspective" : "👑 Community Story",
-          content: text
-        });
-
-        document.getElementById("createText").value = "";
-        this.closeModal("createModal");
-        this.renderPosts();
-        this.navigate("feed");
-        this.showToast("Your story has been posted!");
-      }
-    }
-
-    const app = new App();
-    document.addEventListener("DOMContentLoaded", () => app.start());
-  </script>
-</body>
-</html>
+        document.querySelectorAll(".tab-btn").forEach(btn =
