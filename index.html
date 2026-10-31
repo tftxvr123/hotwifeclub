@@ -604,9 +604,7 @@
       line-height: 1.45;
     }
 
-    /* ==========================================================================
-       THE GODDESS COMPLEX & THE ALTAR
-       ========================================================================== */
+    /* The Goddess Complex */
     .goddess-hero {
       position: relative;
       border-radius: var(--radius-lg);
@@ -740,9 +738,7 @@
       margin-bottom: 14px;
     }
 
-    /* ==========================================================================
-       NEW: FLOATING "QUESTIONS & IDEAS" WIDGET
-       ========================================================================== */
+    /* Floating Button */
     .feedback-float-trigger {
       position: fixed;
       bottom: 84px;
@@ -901,10 +897,8 @@
        ======================================================================== -->
   <main>
 
-    <!-- VIEW 1: PHOTO-RICH LIFESTYLE HOMEPAGE -->
+    <!-- VIEW 1: HOMEPAGE -->
     <section id="view-home" class="view-section active">
-      
-      <!-- HERO SECTION -->
       <div class="container">
         <div class="hero-split">
           <div class="hero-text-side">
@@ -926,7 +920,6 @@
             </div>
           </div>
 
-          <!-- Dynamic Hotwife Fact Visual Card -->
           <div class="hero-visual-side" id="heroVisualCard" style="background-image: url('https://images.unsplash.com/photo-1574539602047-548bf9557352?auto=format&fit=crop&w=1200&q=80');">
             <div class="fact-card-body">
               <span class="fact-pill" id="heroFactNumber">HOTWIFE FACT #42</span>
@@ -942,7 +935,7 @@
         </div>
       </div>
 
-      <!-- PROVOCATIVE TEASER BANNER: THE GODDESS COMPLEX -->
+      <!-- TEASER BANNER: THE GODDESS COMPLEX -->
       <div class="container">
         <div style="background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(147, 51, 234, 0.25)); border: 1px solid #f43f5e; border-radius: var(--radius-lg); padding: 38px 30px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 24px; box-shadow: 0 0 35px rgba(244, 63, 94, 0.3);">
           <div>
@@ -1051,7 +1044,6 @@
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- VIEW: THE GODDESS COMPLEX -->
@@ -1100,7 +1092,6 @@
         </div>
 
         <div class="goddess-altar-grid" id="altar-gallery">
-          
           <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80');">
             <div class="goddess-altar-body">
               <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 01 • THE HUSBAND'S ROLE</span>
@@ -1152,7 +1143,6 @@
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -1161,7 +1151,6 @@
     <!-- VIEW: THE CODE & JEWELS -->
     <section id="view-code" class="view-section">
       <div class="container">
-        
         <div class="section-header" style="margin-top: 10px;">
           <span class="section-tag gold">The Official Lifestyle Manual</span>
           <h1 class="section-h2" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px;">
@@ -1187,7 +1176,6 @@
         </div>
 
         <div class="jewels-grid">
-          
           <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">Primary Indicator</span>
@@ -1252,10 +1240,9 @@
               </p>
             </div>
           </div>
-
         </div>
 
-        <!-- PART 2: MANNERISMS FIELD GUIDE -->
+        <!-- PART 2: MANNERISMS -->
         <div id="part-mannerisms" style="margin-bottom: 20px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             🥂 Part II: The Mannerisms Field Guide
@@ -1344,7 +1331,6 @@
           </div>
 
           <div class="protocol-grid">
-            
             <div class="protocol-card">
               <div>
                 <div class="protocol-number">
@@ -1440,11 +1426,10 @@
                 "The husband isn't angry—he is completely mesmerized. Watching another man take full control of his marriage's erotic destiny is the exact humiliation that fuels his desire."
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- PART 3: LOOKBOOK & BOUTIQUE -->
+        <!-- PART 3: BOUTIQUE -->
         <div id="part-boutique" style="margin-bottom: 20px; padding-top: 10px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             🛍️ Part III: The Luxury Lookbook & Styling Curation
@@ -1453,7 +1438,6 @@
         </div>
 
         <div class="boutique-grid">
-          
           <div class="boutique-card">
             <div class="boutique-img" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=600&q=80');">
               <span class="boutique-badge">ESSENTIAL</span>
@@ -1497,7 +1481,6 @@
               <button class="btn btn-secondary btn-sm" style="width: 100%; border-color: var(--gold-accent); color: var(--gold-accent);" onclick="alert('Item details: Platinum or white gold band with continuous emerald-cut stones.')">View Styling Notes</button>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -1572,72 +1555,12 @@
   </main>
 
   <!-- ========================================================================
-       FLOATING TRIGGER: "QUESTIONS & IDEAS"
+       FLOATING TRIGGER: "QUESTIONS & IDEAS" (OPENS REAL-TIME LIVE CHAT)
        ======================================================================== -->
-  <button class="feedback-float-trigger" onclick="app.openModal('feedbackModal')">
+  <button class="feedback-float-trigger" onclick="app.openLiveChat()">
     <span>💬</span>
     <span>Questions & Ideas</span>
   </button>
-
-  <!-- ========================================================================
-       MODAL: "QUESTIONS & IDEAS" (TELEGRAM CONNECTED & OPEN-TEXT)
-       ======================================================================== -->
-  <div id="feedbackModal" class="modal-overlay">
-    <div class="modal-card">
-      <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted); font-size: 1.2rem;" onclick="app.closeModal('feedbackModal')">✕</button>
-      
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-        <span class="badge-18" style="background: #2563eb; box-shadow: none;">100% DISCREET</span>
-        <span style="font-size: 0.76rem; color: var(--text-muted);">No phone number • Encrypted drop</span>
-      </div>
-
-      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; color: #fff;">
-        Questions & Ideas
-      </h3>
-      <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 16px;">
-        Have a question, suggestion, or taboo topic on your mind? Drop it below.
-      </p>
-
-      <!-- Clickable Seductive Prompt Suggestions -->
-      <div style="margin-bottom: 14px;">
-        <span style="font-size: 0.72rem; font-weight: 800; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">
-          TAP A PROMPT TO START:
-        </span>
-        <div style="display: flex; flex-direction: column; gap: 6px;">
-          <button type="button" class="prompt-chip" onclick="app.fillPrompt('How do I get my husband to take the first step?')">
-            ✨ "How do I get my husband to take the first step?"
-          </button>
-          <button type="button" class="prompt-chip" onclick="app.fillPrompt('A taboo fantasy I need discreet advice on...')">
-            🎭 "A taboo fantasy I need discreet advice on..."
-          </button>
-          <button type="button" class="prompt-chip" onclick="app.fillPrompt('How do we handle our first date night boundaries?')">
-            🥂 "How do we handle our first date night boundaries?"
-          </button>
-          <button type="button" class="prompt-chip" onclick="app.fillPrompt('A protocol or feature you should add to the club...')">
-            ⚡ "A protocol or feature you should add to the club..."
-          </button>
-        </div>
-      </div>
-
-      <!-- Open Text Submission Form -->
-      <form id="feedbackForm" onsubmit="app.handleFeedbackSubmit(event)">
-        <div style="margin-bottom: 14px;">
-          <textarea id="feedbackText" rows="4" required placeholder="Type your open question, concern, or suggestion here..." style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); resize: vertical; font-size: 0.9rem; color: #fff;"></textarea>
-        </div>
-
-        <div style="margin-bottom: 18px;">
-          <label style="display: block; font-size: 0.76rem; color: var(--text-muted); margin-bottom: 4px;">
-            Optional: Pseudonym or Email (leave empty for 100% anonymous drop)
-          </label>
-          <input type="text" id="feedbackContact" placeholder="e.g. @VelvetQueen or member@domain.com" style="width: 100%; padding: 10px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 0.85rem; color: #fff;">
-        </div>
-
-        <button type="submit" id="feedbackSubmitBtn" class="btn btn-primary" style="width: 100%;">
-          Send Privately
-        </button>
-      </form>
-    </div>
-  </div>
 
   <!-- AUTH MODAL -->
   <div id="authModal" class="modal-overlay">
@@ -1711,6 +1634,27 @@
       </p>
     </div>
   </footer>
+
+  <!-- ========================================================================
+       TAWK.TO REAL-TIME TWO-WAY LIVE CHAT INTEGRATION
+       ======================================================================== -->
+  <script type="text/javascript">
+    // Paste your Tawk.to Property ID and Widget ID below (Step 2 guide)
+    var TAWK_PROPERTY_ID = "YOUR_PROPERTY_ID";
+    var TAWK_WIDGET_ID = "default";
+
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function(){
+      if (TAWK_PROPERTY_ID !== "YOUR_PROPERTY_ID") {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/' + TAWK_PROPERTY_ID + '/' + TAWK_WIDGET_ID;
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      }
+    })();
+  </script>
 
   <!-- ========================================================================
        JAVASCRIPT APPLICATION ENGINE
@@ -1887,43 +1831,13 @@
       openModal(id) { document.getElementById(id).classList.add("active"); }
       closeModal(id) { document.getElementById(id).classList.remove("active"); }
 
-      /* Questions & Ideas Widget Logic */
-      fillPrompt(text) {
-        const textarea = document.getElementById("feedbackText");
-        textarea.value = text + " ";
-        textarea.focus();
-      }
-
-      async handleFeedbackSubmit(e) {
-        e.preventDefault();
-        const text = document.getElementById("feedbackText").value.trim();
-        const contact = document.getElementById("feedbackContact").value.trim();
-        const btn = document.getElementById("feedbackSubmitBtn");
-
-        if (!text) return;
-
-        btn.disabled = true;
-        btn.textContent = "Encrypting & Sending...";
-
-        try {
-          // Attempt POST to Vercel Serverless Function
-          const resp = await fetch("/api/feedback", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: text, contact: contact || "Anonymous" })
-          });
-
-          // Even if /api/feedback is not yet deployed on local dev, fallback gracefully
-          this.closeModal("feedbackModal");
-          document.getElementById("feedbackText").value = "";
-          document.getElementById("feedbackContact").value = "";
-          this.showToast("Your question/idea has been dropped into the private vault.");
-        } catch (err) {
-          this.closeModal("feedbackModal");
-          this.showToast("Your question/idea has been dropped into the private vault.");
-        } finally {
-          btn.disabled = false;
-          btn.textContent = "Send Privately";
+      /* Real-Time Live Chat Trigger */
+      openLiveChat() {
+        if (typeof Tawk_API !== "undefined" && typeof Tawk_API.maximize === "function") {
+          Tawk_API.maximize();
+        } else {
+          // If Tawk.to ID hasn't been set yet, show setup reminder
+          alert("Live Chat initialized! To link this to your phone, add your free Tawk.to Property ID in index.html (see Step 2 guide).");
         }
       }
 
