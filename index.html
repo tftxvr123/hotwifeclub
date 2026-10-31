@@ -11,7 +11,7 @@
 
   <!-- Vercel Web Analytics Tracking Script -->
   <script defer src="/_vercel/insights/script.js"></script>
-  
+
   <style>
     /* ==========================================================================
        THE HOTWIFE CLUB — HIGH-GLAM PHOTO & FACT SYSTEM
@@ -26,8 +26,10 @@
       --neon-pink: #ff1f80;
       --neon-pink-glow: rgba(255, 31, 128, 0.35);
       --electric-purple: #9d3bf5;
+      --electric-purple-glow: rgba(157, 59, 245, 0.35);
       --gold-accent: #f59e0b;
       --gold-glow: rgba(245, 158, 11, 0.35);
+      --crimson-accent: #ef4444;
       
       --text-main: #fcfcff;
       --text-muted: #9e9eb4;
@@ -155,16 +157,14 @@
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
     }
-    .desktop-nav { display: none; align-items: center; gap: 22px; }
-    @media (min-width: 960px) { .desktop-nav { display: flex; } }
+    .desktop-nav { display: none; align-items: center; gap: 20px; }
+    @media (min-width: 990px) { .desktop-nav { display: flex; } }
     .nav-link { color: var(--text-muted); font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--neon-pink); }
     .nav-link.gold-link { color: var(--gold-accent); }
     .nav-link.gold-link:hover, .nav-link.gold-link.active { color: #fde68a; }
 
-    /* ==========================================================================
-       HERO SPLIT
-       ========================================================================== */
+    /* Hero Split */
     .hero-split {
       padding: 40px 0 60px;
       display: grid;
@@ -267,6 +267,7 @@
       display: block;
     }
     .section-tag.gold { color: var(--gold-accent); }
+    .section-tag.crimson { color: var(--crimson-accent); }
     .section-h2 {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
@@ -394,16 +395,13 @@
     }
     .fact-card-sub { font-size: 0.85rem; color: #bfbfd4; line-height: 1.5; margin-bottom: 16px; }
 
-    /* ==========================================================================
-       NEW: JEWELRY DECODER & MANNERISMS LOOKBOOK (THE CODE)
-       ========================================================================== */
+    /* Jewelry Grid */
     .jewels-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
       margin-bottom: 60px;
     }
-
     .jewel-card {
       position: relative;
       border-radius: var(--radius-lg);
@@ -458,7 +456,7 @@
       margin-bottom: 14px;
     }
 
-    /* Mannerisms Two-Way Playbook */
+    /* Mannerisms Playbook */
     .mannerisms-container {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -466,7 +464,6 @@
       padding: 34px 26px;
       margin-bottom: 70px;
     }
-
     .playbook-tabs {
       display: flex;
       gap: 12px;
@@ -490,7 +487,6 @@
       border-color: var(--gold-accent);
       box-shadow: 0 4px 18px var(--gold-glow);
     }
-
     .cue-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -521,7 +517,75 @@
     }
     .cue-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
 
-    /* Curated Luxury Boutique / Lookbook (Option C) */
+    /* ==========================================================================
+       NEW: THE CUCKOLD PROTOCOL (AUTHORITY, CONTROL & SIDELINING)
+       ========================================================================== */
+    .protocol-section-wrap {
+      background: radial-gradient(circle at center, #180d22 0%, #0d0815 60%, var(--bg-base) 100%);
+      border: 1px solid rgba(157, 59, 245, 0.4);
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      margin-bottom: 70px;
+      box-shadow: 0 0 35px rgba(157, 59, 245, 0.15);
+    }
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+    .protocol-card {
+      background: rgba(18, 14, 26, 0.9);
+      border: 1px solid #332048;
+      border-radius: var(--radius-md);
+      padding: 26px;
+      position: relative;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .protocol-card:hover {
+      border-color: var(--electric-purple);
+      box-shadow: 0 8px 30px rgba(157, 59, 245, 0.25);
+      transform: translateY(-3px);
+    }
+    .protocol-number {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #c084fc;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .protocol-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .protocol-reality {
+      font-size: 0.9rem;
+      color: #d1d1e4;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .protocol-quote-box {
+      background: rgba(0, 0, 0, 0.5);
+      border-left: 3px solid var(--electric-purple);
+      padding: 10px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.84rem;
+      font-style: italic;
+      color: #e9d5ff;
+      line-height: 1.45;
+    }
+
+    /* Boutique Grid */
     .boutique-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -572,7 +636,7 @@
       margin-bottom: 14px;
     }
 
-    /* Views */
+    /* Views Framework */
     .view-section { display: none; padding: 20px 0 50px; animation: fadeIn 0.25s ease-out forwards; }
     .view-section.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
@@ -648,7 +712,7 @@
   </div>
 
   <!-- ========================================================================
-       HEADER (Includes Link to "The Code & Jewels")
+       HEADER
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -724,16 +788,16 @@
         </div>
       </div>
 
-      <!-- TEASER BANNER: THE SECRET CODE & JEWELS -->
+      <!-- TEASER BANNER: THE SECRET CODE & CUCKOLD PROTOCOL -->
       <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(157, 59, 245, 0.15)); border: 1px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 36px 28px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 20px;">
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(157, 59, 245, 0.2)); border: 1px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 36px 28px; margin-bottom: 60px; display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 20px;">
           <div>
             <span class="section-tag gold">NEW • THE COMPLETE LOOKBOOK</span>
             <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 8px;">
-              The Secret Language: Jewelry, Anklets & Seduction Cues
+              The Secret Language: Jewels, Signals & The Cuckold Protocol
             </h3>
             <p style="color: #d1d1e4; font-size: 0.95rem; max-width: 680px;">
-              From the <strong>Left Anklet</strong> and the <strong>Wedding Ring Paradox</strong> to reading eye contact across luxury hotel lounges—master how to hint, how to catch hints, and what each piece means.
+              Master how to hint, how to read non-verbal invitations, and dive into <strong>The Cuckold Protocol</strong>: raw, realistic rules on lover authority, permission-seeking, and casual sidelining.
             </p>
           </div>
           <button class="btn btn-gold" onclick="app.navigate('code')" style="white-space: nowrap;">
@@ -837,7 +901,7 @@
     </section>
 
     <!-- ========================================================================
-         VIEW: THE CODE & JEWELS (THE COMPLETE LIFESTYLE DECODER & MANNERISMS)
+         VIEW: THE CODE & JEWELS (THE COMPLETE LIFESTYLE DECODER)
          ======================================================================== -->
     <section id="view-code" class="view-section">
       <div class="container">
@@ -846,15 +910,21 @@
         <div class="section-header" style="margin-top: 10px;">
           <span class="section-tag gold">The Official Lifestyle Manual</span>
           <h1 class="section-h2" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px;">
-            The Secret Code: Jewelry, Signals & Mannerisms
+            The Secret Code: Jewels, Signals & The Protocol
           </h1>
-          <p style="color: var(--text-muted); font-size: 1rem; max-width: 720px; margin: 0 auto;">
-            The complete visual decoder for hotwives, husbands, and admirers. Learn how to hint, how to read non-verbal invitations, and the meaning behind every piece of lifestyle jewelry.
+          <p style="color: var(--text-muted); font-size: 1rem; max-width: 760px; margin: 0 auto;">
+            The complete visual decoder for hotwives, husbands, and admirers. From jewelry symbolism and seduction mannerisms to raw, realistic rules on lover authority and power exchange.
           </p>
+          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 18px; flex-wrap: wrap;">
+            <a href="#part-jewels" class="btn btn-secondary btn-sm">Part I: Jewels</a>
+            <a href="#part-mannerisms" class="btn btn-secondary btn-sm">Part II: Mannerisms</a>
+            <a href="#part-protocol" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, var(--electric-purple), #c026d3);">⚡ Part IV: The Cuckold Protocol</a>
+            <a href="#part-boutique" class="btn btn-secondary btn-sm">Part III: Lookbook</a>
+          </div>
         </div>
 
         <!-- PART 1: THE SECRET JEWELRY DECODER -->
-        <div style="margin-bottom: 24px;">
+        <div id="part-jewels" style="margin-bottom: 24px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             💎 Part I: The Jewelry Decoder
           </h3>
@@ -936,7 +1006,7 @@
         </div>
 
         <!-- PART 2: THE TWO-WAY MANNERISMS PLAYBOOK -->
-        <div style="margin-bottom: 20px;">
+        <div id="part-mannerisms" style="margin-bottom: 20px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             🥂 Part II: The Mannerisms Field Guide
           </h3>
@@ -1014,8 +1084,129 @@
           </div>
         </div>
 
-        <!-- PART 3: CURATED LUXURY LOOKBOOK & BOUTIQUE (OPTION C) -->
-        <div style="margin-bottom: 20px;">
+        <!-- ==================================================================
+             NEW PART IV: THE CUCKOLD PROTOCOL (CONTROL, AUTHORITY & SIDELINING)
+             ================================================================== -->
+        <div id="part-protocol" class="protocol-section-wrap">
+          <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+            <span class="section-tag crimson">⚡ SHARP • UNFILTERED • REALISTIC</span>
+            <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.2vw, 2.4rem); color: #fff; margin-bottom: 10px;">
+              The Cuckold Protocol: Authority & Sidelining
+            </h2>
+            <p style="color: #c4b5fd; font-size: 0.95rem; line-height: 1.6;">
+              This isn't movie fantasy or cheesy costumes. This is the raw psychological reality of what happens when a real bull steps into a marriage: everyday decision-making shifts, the wife turns submissive to her lover, and the husband quietly steps into the passenger seat.
+            </p>
+          </div>
+
+          <div class="protocol-grid">
+            
+            <!-- Protocol 01: The Permission Shift -->
+            <div class="protocol-card">
+              <div>
+                <div class="protocol-number">
+                  <span>Protocol 01</span>
+                  <span style="color: var(--neon-pink);">PERMISSION SHIFT</span>
+                </div>
+                <h3 class="protocol-title">"Ask Him, Not You"</h3>
+                <p class="protocol-reality">
+                  The most immediate demotion a husband experiences is losing his status as the person she checks in with. When the husband asks her if she wants another cocktail or when they're leaving, she doesn't answer him. She glances over at the lover with a docile smile and waits for his nod. The husband instantly becomes a bystander in his own relationship.
+                </p>
+              </div>
+              <div class="protocol-quote-box">
+                "Her eyes don't look at her husband for permission anymore. If she wants another martini or wants to stay an extra hour, she looks up at her lover and asks: 'Am I allowed, or are we going back upstairs?'"
+              </div>
+            </div>
+
+            <!-- Protocol 02: Movement & Schedule Control -->
+            <div class="protocol-card">
+              <div>
+                <div class="protocol-number">
+                  <span>Protocol 02</span>
+                  <span style="color: var(--neon-pink);">MOVEMENT CONTROL</span>
+                </div>
+                <h3 class="protocol-title">He Approves Where She Goes</h3>
+                <p class="protocol-reality">
+                  A dominant bull subtly dictates her physical presence. She doesn't get up to use the restroom, check her phone, or step onto the patio without catching his eye first. If she needs to leave the table, she asks his permission. The husband sits right there, watching his independent wife happily obey another man's casual tempo.
+                </p>
+              </div>
+              <div class="protocol-quote-box">
+                "She won't touch her purse, leave the booth, or step away from the bar until her lover gives the subtle nod. The husband provides the lifestyle, but the bull manages her time."
+              </div>
+            </div>
+
+            <!-- Protocol 03: Casual Decision Override -->
+            <div class="protocol-card">
+              <div>
+                <div class="protocol-number">
+                  <span>Protocol 03</span>
+                  <span style="color: var(--neon-pink);">THE OVERRULE</span>
+                </div>
+                <h3 class="protocol-title">"Leave It To Me, Man"</h3>
+                <p class="protocol-reality">
+                  When plans are made, the bull doesn't ask for the husband's input—he casually takes over. When deciding whether to call a cab, order another round, or settle a bill, the lover effortlessly steps in front, drops his card, or directs the evening. He doesn't insult the husband; he patronizes him with polite efficiency, sidelining him without a fight.
+                </p>
+              </div>
+              <div class="protocol-quote-box">
+                "The husband starts to suggest heading home. The bull puts a hand on his shoulder and smiles: 'Relax, man, we're taking her to one more lounge. You can head back or sit with us.' And the husband simply complies."
+              </div>
+            </div>
+
+            <!-- Protocol 04: Public Claiming & Body Language -->
+            <div class="protocol-card">
+              <div>
+                <div class="protocol-number">
+                  <span>Protocol 04</span>
+                  <span style="color: var(--neon-pink);">PUBLIC CLAIMING</span>
+                </div>
+                <h3 class="protocol-title">Hands on His Property</h3>
+                <p class="protocol-reality">
+                  In public venues, there is zero ambiguity about who commands her attention. The lover’s palm rests firmly on the small of her back as they walk through the hotel lobby. Under the table, his hand rests casually on her inner thigh. The husband walks a half-step behind or sits across the booth like invited company, watching everyone in the room assume she belongs to the bull.
+                </p>
+              </div>
+              <div class="protocol-quote-box">
+                "To the bartender, the waiter, and every stranger in the lounge, the bull is the man she arrived with. The husband is just the quiet guy sitting at the end of the table paying respect."
+              </div>
+            </div>
+
+            <!-- Protocol 05: Her Total Feminine Surrender -->
+            <div class="protocol-card">
+              <div>
+                <div class="protocol-number">
+                  <span>Protocol 05</span>
+                  <span style="color: var(--neon-pink);">FEMININE SURRENDER</span>
+                </div>
+                <h3 class="protocol-title">She Craves His Authority</h3>
+                <p class="protocol-reality">
+                  The deepest thrill for both men is witnessing the wife’s genuine submission. Independent, accomplished women often grow tired of running households or negotiating with passive partners. Being firmly taken charge of by an assertive lover unlocks an eager, submissive side she never showed her husband—and watching her blush when commanded is the ultimate taboo aphrodisiac.
+                </p>
+              </div>
+              <div class="protocol-quote-box">
+                "She never spoke to her husband with that tone of voice. When the lover tells her to sit down, sip her drink, or put her phone away, she smiles, blushes, and obeys instantly. That shift in power is the real addiction."
+              </div>
+            </div>
+
+            <!-- Protocol 06: The Husband's Disarmed Demotion -->
+            <div class="protocol-card">
+              <div>
+                <div class="protocol-number">
+                  <span>Protocol 06</span>
+                  <span style="color: var(--neon-pink);">DISARMED ACCEPTANCE</span>
+                </div>
+                <h3 class="protocol-title">The Passenger Seat</h3>
+                <p class="protocol-reality">
+                  The true power dynamic doesn't require screaming or physical cruelty. It is the quiet, disarming realization that the husband has voluntarily forfeited the driver's seat. He realizes that when all three are in a room, the lover's presence carries more gravity, his words carry more weight, and his wife's body belongs to the man giving the orders.
+                </p>
+              </div>
+              <div class="protocol-quote-box">
+                "The husband isn't angry—he is completely mesmerized. Watching another man take full control of his marriage's erotic destiny is the exact humiliation that fuels his desire."
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PART 3: CURATED LUXURY LOOKBOOK & BOUTIQUE -->
+        <div id="part-boutique" style="margin-bottom: 20px; padding-top: 10px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             🛍️ Part III: The Luxury Lookbook & Styling Curation
           </h3>
@@ -1183,7 +1374,7 @@
     </div>
   </div>
 
-  <!-- Mobile Bottom Nav (Includes Code & Jewels Icon) -->
+  <!-- Mobile Bottom Nav -->
   <nav class="mobile-bottom-nav">
     <button class="mobile-nav-item active" data-view="home" onclick="app.navigate('home')">
       <span>✨</span><span>Home</span>
@@ -1454,4 +1645,4 @@
     document.addEventListener("DOMContentLoaded", () => app.start());
   </script>
 </body>
-</html>  
+</html>
