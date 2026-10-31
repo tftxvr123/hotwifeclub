@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+  
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 
-   <!-- Vercel Web Analytics Tracking Script -->
+  <!-- Vercel Web Analytics Tracking Script -->
   <script defer src="/_vercel/insights/script.js"></script>
   
   <style>
@@ -149,7 +151,7 @@
     .nav-link:hover, .nav-link.active { color: var(--neon-pink); }
 
     /* ==========================================================================
-       PHOTO-HEAVY HERO (With Visual Split & Live Fact Feature)
+       PHOTO-HEAVY HERO
        ========================================================================== */
     .hero-split {
       padding: 40px 0 60px;
@@ -185,7 +187,6 @@
       max-width: 540px;
     }
 
-    /* Live Interactive Fact Hero Card */
     .hero-visual-side {
       position: relative;
       border-radius: var(--radius-lg);
@@ -240,11 +241,11 @@
     }
 
     /* ==========================================================================
-       HOTWIFE FACTS PHOTO FEED GRID (@hotwife_facts inspired)
+       SECTIONS & HEADERS
        ========================================================================== */
     .section-header {
       text-align: center;
-      margin: 70px 0 40px;
+      margin: 70px 0 36px;
     }
     .section-tag {
       color: var(--neon-pink);
@@ -261,6 +262,91 @@
       font-weight: 800;
     }
 
+    /* ==========================================================================
+       NEW: THE BULL & LOVER PERSPECTIVE GRID (EXPERIENCES WITH A MILF / HOTWIFE)
+       ========================================================================== */
+    .lover-stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+
+    .lover-story-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 490px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      border: 1px solid var(--border-subtle);
+      background-size: cover;
+      background-position: center;
+      transition: all 0.3s ease;
+    }
+    .lover-story-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5,5,7,0.15) 0%, rgba(9,9,14,0.75) 50%, #060609 100%);
+      transition: background 0.3s;
+    }
+    .lover-story-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--neon-pink);
+      box-shadow: 0 14px 40px rgba(255, 31, 128, 0.3);
+    }
+    .lover-story-card:hover::before {
+      background: linear-gradient(180deg, rgba(5,5,7,0.05) 0%, rgba(9,9,14,0.7) 45%, #060609 100%);
+    }
+
+    .lover-content {
+      position: relative;
+      z-index: 2;
+    }
+    .lover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold-accent);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .lover-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    .lover-narrative {
+      font-size: 0.88rem;
+      color: #c9c9de;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .lover-author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Hotwife Facts Photo Grid */
     .facts-photo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -293,11 +379,7 @@
       border-color: var(--neon-pink);
       box-shadow: 0 12px 35px rgba(255, 31, 128, 0.28);
     }
-
-    .fact-card-body {
-      position: relative;
-      z-index: 2;
-    }
+    .fact-card-body { position: relative; z-index: 2; }
     .fact-card-number {
       font-family: var(--font-display);
       font-size: 0.76rem;
@@ -323,104 +405,12 @@
       margin-bottom: 16px;
     }
 
-    /* ==========================================================================
-       HIS PERSPECTIVE VS HER PERSPECTIVE (Dual Photo Narrative)
-       ========================================================================== */
-    .perspective-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-bottom: 70px;
-    }
-    @media (min-width: 860px) {
-      .perspective-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .perspective-card {
-      position: relative;
-      min-height: 500px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 34px;
-      border: 1px solid var(--border-subtle);
-      background-size: cover;
-      background-position: center;
-    }
-    .perspective-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(8,8,12,0.85) 60%, #07070b 100%);
-    }
-    .perspective-content { position: relative; z-index: 2; }
-
-    /* ==========================================================================
-       THE 4-STEP DATE NIGHT RITUAL (Visual Story Strip)
-       ========================================================================== */
-    .ritual-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-bottom: 60px;
-    }
-    .ritual-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: all 0.25s ease;
-    }
-    .ritual-box:hover {
-      border-color: var(--neon-pink);
-      transform: translateY(-3px);
-    }
-    .ritual-img {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .ritual-step-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(0,0,0,0.75);
-      border: 1px solid var(--neon-pink);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.72rem;
-      padding: 3px 8px;
-      border-radius: var(--radius-sm);
-    }
-    .ritual-info { padding: 18px; }
-    .ritual-title {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-    .ritual-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
-
-    /* Interactive Banner */
-    .lifestyle-cta-banner {
-      background: radial-gradient(circle at center, #26113b 0%, #0e0918 60%, var(--bg-base) 100%);
-      border: 1px solid rgba(255, 31, 128, 0.4);
-      border-radius: var(--radius-lg);
-      padding: 50px 30px;
-      text-align: center;
-      margin-bottom: 70px;
-      box-shadow: 0 0 35px rgba(157, 59, 245, 0.2);
-    }
-
-    /* Views Framework */
+    /* Views */
     .view-section { display: none; padding: 20px 0 50px; animation: fadeIn 0.25s ease-out forwards; }
     .view-section.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Modals & Bottom Navigation */
+    /* Modals & Nav */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(14px);
       z-index: 200; display: flex; align-items: center; justify-content: center; padding: 18px;
@@ -429,7 +419,7 @@
     .modal-overlay.active { opacity: 1; pointer-events: auto; }
     .modal-card {
       background: var(--bg-surface); border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg); width: 100%; max-width: 480px; padding: 28px; position: relative;
+      border-radius: var(--radius-lg); width: 100%; max-width: 500px; padding: 28px; position: relative;
     }
 
     .mobile-bottom-nav {
@@ -514,7 +504,7 @@
           Sign In
         </button>
         <button class="btn btn-primary btn-sm" onclick="app.checkAuthAndDo(() => app.openModal('createModal'))">
-          + Share Story
+          + Post Story
         </button>
       </div>
     </div>
@@ -528,7 +518,7 @@
     <!-- VIEW 1: PHOTO-RICH LIFESTYLE HOMEPAGE -->
     <section id="view-home" class="view-section active">
       
-      <!-- HERO SECTION WITH LIVE HOTWIFE FACT GENERATOR -->
+      <!-- HERO SECTION -->
       <div class="container">
         <div class="hero-split">
           <div class="hero-text-side">
@@ -538,7 +528,7 @@
               <span class="hotwife-word">Owned By None.</span>
             </h1>
             <p class="hero-desc">
-              Nothing matches the erotic electricity of a married woman worshipped by new lovers—and the intense marital bond forged when her husband watches with pure pride.
+              Nothing matches the erotic electricity of a married woman worshipped by lovers—and the intense marital bond forged when her husband watches with pure pride.
             </p>
             <div style="display: flex; gap: 14px; flex-wrap: wrap;">
               <button class="btn btn-primary" onclick="app.checkAuthAndDo(() => app.navigate('feed'))">
@@ -566,19 +556,83 @@
         </div>
       </div>
 
-      <!-- PHOTO SECTION: THE HOTWIFE FACTS GALLERY (@hotwife_facts aesthetic) -->
+      <!-- ====================================================================
+           NEW SECTION: THE BULL & LOVER PERSPECTIVE (EXPERIENCES WITH A MILF / HOTWIFE)
+           ==================================================================== -->
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Unfiltered Encounters & Reverence</span>
+          <h2 class="section-h2">The Lover's Journal: Being With A Hotwife / MILF</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 660px; margin: 10px auto 0;">
+            First-hand accounts from the men chosen to experience the beauty, maturity, and uninhibited passion of another man's queen.
+          </p>
+        </div>
+
+        <div class="lover-stories-grid">
+
+          <!-- Lover Story 1: Confidence & Zero Games -->
+          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80');">
+            <div class="lover-content">
+              <span class="lover-badge">🐂 Third / Bull Recap</span>
+              <p class="lover-quote">"There is nothing in the world like being with an experienced married MILF. Absolutely zero games."</p>
+              <p class="lover-narrative">
+                "Dating girls in their 20s is filled with insecurity. Being invited out by a gorgeous 38-year-old hotwife who knows exactly who she is, orders high-end drinks, and is completely comfortable with her body and desires was the most exhilarating date of my life."
+              </p>
+              <div class="lover-author">
+                <span>By @AlphaGuest_NY</span>
+                <span style="color: var(--neon-pink);">🔥 420 Loved</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lover Story 2: The Husband Connection -->
+          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80');">
+            <div class="lover-content">
+              <span class="lover-badge">🐂 Date Night Recap</span>
+              <p class="lover-quote">"Seeing the gold wedding ring on her finger as she held my hand in the lounge... the taboo was electric."</p>
+              <p class="lover-narrative">
+                "Her husband had bought our first round of martinis and wished her a great night before heading back to their suite. Knowing he fully celebrated her desirability and was waiting to reclaim her made the chemistry ten times more intense."
+              </p>
+              <div class="lover-author">
+                <span>By @VanguardLover</span>
+                <span style="color: var(--neon-pink);">🔥 512 Loved</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lover Story 3: Worshipping The Queen -->
+          <div class="lover-story-card" style="background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=80');">
+            <div class="lover-content">
+              <span class="lover-badge">🐂 Real Encounter</span>
+              <p class="lover-quote">"She carried herself like royalty because she is treated like royalty at home."</p>
+              <p class="lover-narrative">
+                "A hotwife MILF has an erotic aura you can't fake. She's completely loved and adored by her husband, so when she chooses you for an evening, she gives you her undivided, unapologetic passion with zero strings attached."
+              </p>
+              <div class="lover-author">
+                <span>By @GentlemanThird</span>
+                <span style="color: var(--neon-pink);">🔥 388 Loved</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: -30px; margin-bottom: 60px;">
+          <button class="btn btn-secondary" onclick="app.filterFeedByLover()">
+            Read All Bull & Lover Recaps (32+) →
+          </button>
+        </div>
+      </div>
+
+      <!-- PHOTO SECTION: THE HOTWIFE FACTS GALLERY -->
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Visual Truths & Provocations</span>
           <h2 class="section-h2">The Hotwife Facts Feed</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 620px; margin: 10px auto 0;">
-            The unfiltered psychology, erotic truths, and seductive realities of living the lifestyle.
-          </p>
         </div>
 
         <div class="facts-photo-grid">
 
-          <!-- Fact 1: The Ring Stays On -->
           <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80');">
             <div class="fact-card-body">
               <span class="fact-card-number">Hotwife Fact #07</span>
@@ -588,17 +642,6 @@
             </div>
           </div>
 
-          <!-- Fact 2: Reclaiming Her (Afterglow) -->
-          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80');">
-            <div class="fact-card-body">
-              <span class="fact-card-number">Hotwife Fact #23</span>
-              <p class="fact-card-quote">"The best part isn't what she does with him. It's when she comes home to her husband."</p>
-              <p class="fact-card-sub">Reclaiming your wife after she's been adored by another man unlocks an intensity of desire that ordinary monogamy rarely touches.</p>
-              <button class="btn btn-secondary btn-sm" onclick="app.navigate('confessions')">Read Reclaim Stories</button>
-            </div>
-          </div>
-
-          <!-- Fact 3: The Anklet Symbolism -->
           <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80');">
             <div class="fact-card-body">
               <span class="fact-card-number">Hotwife Fact #51</span>
@@ -608,17 +651,6 @@
             </div>
           </div>
 
-          <!-- Fact 4: Husband's Compersion -->
-          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80');">
-            <div class="fact-card-body">
-              <span class="fact-card-number">Hotwife Fact #84</span>
-              <p class="fact-card-quote">"Jealousy is fear. Compersion is pure power and erotic celebration."</p>
-              <p class="fact-card-sub">Insecure men try to hide their wives away. Confident husbands dress them up, buy the drinks, and enjoy the thrill of watching jaws drop.</p>
-              <button class="btn btn-secondary btn-sm" onclick="app.navigate('quiz')">Take Boundary Quiz</button>
-            </div>
-          </div>
-
-          <!-- Fact 5: Pure Female Confidence -->
           <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?auto=format&fit=crop&w=900&q=80');">
             <div class="fact-card-body">
               <span class="fact-card-number">Hotwife Fact #102</span>
@@ -628,125 +660,6 @@
             </div>
           </div>
 
-          <!-- Fact 6: The Date Night Preparation -->
-          <div class="fact-card" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');">
-            <div class="fact-card-body">
-              <span class="fact-card-number">Hotwife Fact #119</span>
-              <p class="fact-card-quote">"He zips her dress, pours her champagne, and sends her out with a kiss."</p>
-              <p class="fact-card-sub">The ritual of preparing her for date night creates an intimacy so profound, it redefines the entire meaning of marriage.</p>
-              <button class="btn btn-secondary btn-sm" onclick="app.navigate('feed')">Read Date Recaps</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- DUAL PERSPECTIVE PHOTO SHOWCASE: HIS & HERS -->
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Two Sides of The Same Flame</span>
-          <h2 class="section-h2">His & Her Perspective</h2>
-        </div>
-
-        <div class="perspective-grid">
-          
-          <!-- Her Side -->
-          <div class="perspective-card" style="background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1000&q=80');">
-            <div class="perspective-content">
-              <span class="fact-pill" style="border-color: var(--neon-pink);">HER VOICE • THE HOTWIFE</span>
-              <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 12px;">"I am desired like a fantasy, yet loved like a queen."</h3>
-              <p style="font-size: 0.95rem; color: #d8d8ea; line-height: 1.6; margin-bottom: 18px;">
-                "There is no guilt here. Knowing my husband gets turned on by my beauty and freedom makes me love him infinitely more. When I’m out with someone new, my mind is still connected to the man who made it possible."
-              </p>
-              <button class="btn btn-primary btn-sm" onclick="app.navigate('rooms')">Women's Room</button>
-            </div>
-          </div>
-
-          <!-- His Side -->
-          <div class="perspective-card" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80');">
-            <div class="perspective-content">
-              <span class="fact-pill" style="border-color: var(--electric-purple); color: #c48eff;">HIS VOICE • THE PROUD HUSBAND</span>
-              <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 12px;">"Sharing her beauty didn't diminish my role—it magnified it."</h3>
-              <p style="font-size: 0.95rem; color: #d8d8ea; line-height: 1.6; margin-bottom: 18px;">
-                "Watching other men realize they are merely temporary guests in her life, while I am the foundation she builds upon, is the most intoxicating rush a secure man can ever feel."
-              </p>
-              <button class="btn btn-secondary btn-sm" onclick="app.navigate('rooms')">Husband's Room</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- THE 4-STEP DATE NIGHT RITUAL (Visual photo progression) -->
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Anatomy of an Evening</span>
-          <h2 class="section-h2">The Date Night Ritual</h2>
-        </div>
-
-        <div class="ritual-strip">
-          
-          <div class="ritual-box">
-            <div class="ritual-img" style="background-image: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80');">
-              <span class="ritual-step-badge">STEP 01</span>
-            </div>
-            <div class="ritual-info">
-              <h4 class="ritual-title">The Prelude</h4>
-              <p class="ritual-desc">Selecting the lingerie, the perfume, and the shoes together with the husband before stepping out.</p>
-            </div>
-          </div>
-
-          <div class="ritual-box">
-            <div class="ritual-img" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80');">
-              <span class="ritual-step-badge">STEP 02</span>
-            </div>
-            <div class="ritual-info">
-              <h4 class="ritual-title">The Toast</h4>
-              <p class="ritual-desc">A private cocktail between spouses to lock eyes, affirm boundaries, and build anticipation.</p>
-            </div>
-          </div>
-
-          <div class="ritual-box">
-            <div class="ritual-img" style="background-image: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=600&q=80');">
-              <span class="ritual-step-badge">STEP 03</span>
-            </div>
-            <div class="ritual-info">
-              <h4 class="ritual-title">The Encounter</h4>
-              <p class="ritual-desc">The solo dinner or date with the chosen lover—basking in unapologetic passion and adoration.</p>
-            </div>
-          </div>
-
-          <div class="ritual-box">
-            <div class="ritual-img" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80');">
-              <span class="ritual-step-badge">STEP 04</span>
-            </div>
-            <div class="ritual-info">
-              <h4 class="ritual-title">The Reclaim</h4>
-              <p class="ritual-desc">Returning home to recount the details and experience explosive, unmatched marital reconnection.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CTA BANNER -->
-      <div class="container">
-        <div class="lifestyle-cta-banner">
-          <span style="font-size: 2.2rem; display: block; margin-bottom: 12px;">🥂</span>
-          <h3 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 800; margin-bottom: 14px;">
-            Step Beyond Boring Monogamy
-          </h3>
-          <p style="color: #c9c9e0; font-size: 1.02rem; max-width: 680px; margin: 0 auto 26px;">
-            Join thousands of real married women and loving couples sharing experiences, guidance, and unfiltered passion in complete privacy.
-          </p>
-          <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <button class="btn btn-primary" onclick="app.openModal('authModal')">
-              Join The Club (Discreet & Free)
-            </button>
-            <button class="btn btn-secondary" onclick="app.navigate('quiz')">
-              Take Compatibility Quiz
-            </button>
-          </div>
         </div>
       </div>
 
@@ -755,13 +668,21 @@
     <!-- VIEW 2: FEED DISCUSSIONS -->
     <section id="view-feed" class="view-section">
       <div class="container" style="max-width: 800px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <div>
             <h2 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800;">Club Discussions</h2>
-            <p style="color: var(--text-muted); font-size: 0.88rem;">Real talk, experiences, and advice from verified couples.</p>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Real talk, experiences, and advice from verified couples & lovers.</p>
           </div>
           <button class="btn btn-primary btn-sm" onclick="app.openModal('createModal')">+ Post</button>
         </div>
+
+        <!-- Filter tabs including Lover/Bull filter -->
+        <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 6px;">
+          <button class="tab-btn active" id="filterAll" onclick="app.filterFeed('all')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">All</button>
+          <button class="tab-btn" id="filterLover" onclick="app.filterFeed('lover')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">🐂 Lover / Bull Stories</button>
+          <button class="tab-btn" id="filterWife" onclick="app.filterFeed('wife')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">👑 Wife Confessions</button>
+        </div>
+
         <div id="postsFeedContainer"></div>
       </div>
     </section>
@@ -778,7 +699,7 @@
       </div>
     </section>
 
-    <!-- VIEW 4: ROOMS -->
+    <!-- VIEW 4: ROOMS (NOW WITH 7 INITIAL ROOMS INCLUDING THE BULL & LOVER PERSPECTIVE) -->
     <section id="view-rooms" class="view-section">
       <div class="container">
         <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 20px;">Club Rooms</h2>
@@ -822,24 +743,35 @@
       <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 8px;">Claim Your Pseudonym</h3>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">No real names or emails are ever shown publicly.</p>
       <form onsubmit="app.handleAuthSubmit(event)">
-        <input type="text" id="authUsername" required placeholder="Choose a handle (e.g. VelvetQueen)" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 14px;">
+        <input type="text" id="authUsername" required placeholder="Choose a handle (e.g. VelvetQueen or GentlemanThird)" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 14px;">
         <select id="authAccountType" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 18px;">
           <option>Hotwife / Exploring Wife</option>
           <option>Devoted Couple Exploring</option>
           <option>Voyeuristic Husband</option>
+          <option>Lover / Bull / Experienced Third</option>
         </select>
         <button type="submit" class="btn btn-primary" style="width: 100%;">Enter The Club</button>
       </form>
     </div>
   </div>
 
+  <!-- CREATE POST MODAL WITH LOVER OPTION -->
   <div id="createModal" class="modal-overlay">
     <div class="modal-card">
       <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted);" onclick="app.closeModal('createModal')">✕</button>
-      <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 14px;">Share With The Club</h3>
+      <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 14px;">Share Story or Recap</h3>
       <form onsubmit="app.handleCreateSubmit(event)">
-        <textarea id="createText" rows="4" required placeholder="Share an experience, fantasy, or question..." style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); resize: vertical; margin-bottom: 16px;"></textarea>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Publish</button>
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Category / Room</label>
+          <select id="createPostCategory" style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+            <option value="lover">🐂 The Bull Perspective (Experience with a Hotwife/MILF)</option>
+            <option value="wife">👑 Wife / Hotwife Milestone</option>
+            <option value="couple">🥂 Couple / Husband Reflection</option>
+            <option value="curious">💍 Married & Curious</option>
+          </select>
+        </div>
+        <textarea id="createText" rows="5" required placeholder="Describe what made the encounter special, her confidence, or how the dynamic felt..." style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); resize: vertical; margin-bottom: 16px;"></textarea>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Publish To Community</button>
       </form>
     </div>
   </div>
@@ -900,17 +832,40 @@
     ];
 
     const INITIAL_ROOMS = [
-      { name: "Married & Curious", desc: "Taking initial steps and discussing fantasies safely.", icon: "💍" },
-      { name: "Hotwife Lifestyle", desc: "Living the lifestyle openly and celebrating confidence.", icon: "✨" },
-      { name: "Couples Corner", desc: "Communication check-ins, boundaries, and compersion.", icon: "🥂" },
-      { name: "Experiences & Stories", desc: "Milestone recaps and unforgettable nights.", icon: "📖" },
-      { name: "Fantasy & Roleplay", desc: "Pillow talk and erotic psychology.", icon: "🎭" },
-      { name: "Relationship Discussions", desc: "Navigating emotions, reassurance, and intimacy.", icon: "💬" }
+      { id: "bull", name: "The Bull & Lover Perspective", desc: "For thirds and bulls to share encounters, respect, and experiences with hotwives & MILFs.", icon: "🐂" },
+      { id: "curious", name: "Married & Curious", desc: "Taking initial steps and discussing fantasies safely.", icon: "💍" },
+      { id: "lifestyle", name: "Hotwife Lifestyle", desc: "Living the lifestyle openly and celebrating confidence.", icon: "✨" },
+      { id: "couples", name: "Couples Corner", desc: "Communication check-ins, boundaries, and compersion.", icon: "🥂" },
+      { id: "experiences", name: "Experiences & Stories", desc: "Milestone recaps and unforgettable nights.", icon: "📖" },
+      { id: "fantasy", name: "Fantasy & Roleplay", desc: "Pillow talk and erotic psychology.", icon: "🎭" },
+      { id: "relations", name: "Relationship Discussions", desc: "Navigating emotions, reassurance, and intimacy.", icon: "💬" }
+    ];
+
+    const SAMPLE_POSTS = [
+      {
+        category: "lover",
+        author: "VanguardLover",
+        tag: "🐂 Bull Perspective",
+        content: "Being with a married woman who has her husband's full blessing is completely unlike normal hookups. There's zero drama, intense gratitude, and a level of sensual maturity you just don't find elsewhere."
+      },
+      {
+        category: "wife",
+        author: "VelvetQueen",
+        tag: "👑 Wife Confession",
+        content: "Our third date night this year was pure magic. My husband chose the backless emerald gown and sent me off with our favorite cocktail. Reclaiming me afterward was hotter than our wedding night."
+      },
+      {
+        category: "lover",
+        author: "AlphaGuest_NY",
+        tag: "🐂 Bull Perspective",
+        content: "To the guys who have never been with an experienced MILF: the way she commands the bedroom with total confidence will ruin ordinary dating for you forever."
+      }
     ];
 
     class App {
       constructor() {
         this.factIndex = 0;
+        this.currentFilter = "all";
       }
 
       start() {
@@ -989,6 +944,25 @@
       openModal(id) { document.getElementById(id).classList.add("active"); }
       closeModal(id) { document.getElementById(id).classList.remove("active"); }
 
+      filterFeed(type) {
+        this.currentFilter = type;
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+          btn.style.background = "var(--bg-card)";
+          btn.style.color = "var(--text-muted)";
+        });
+        const activeBtn = document.getElementById(type === "all" ? "filterAll" : (type === "lover" ? "filterLover" : "filterWife"));
+        if (activeBtn) {
+          activeBtn.style.background = "var(--neon-pink)";
+          activeBtn.style.color = "#fff";
+        }
+        this.renderPosts();
+      }
+
+      filterFeedByLover() {
+        this.navigate("feed");
+        this.filterFeed("lover");
+      }
+
       renderRooms() {
         const grid = document.getElementById("clubRoomsGrid");
         grid.innerHTML = INITIAL_ROOMS.map(r => `
@@ -1003,12 +977,20 @@
 
       renderPosts() {
         const container = document.getElementById("postsFeedContainer");
-        container.innerHTML = `
+        let posts = SAMPLE_POSTS;
+        if (this.currentFilter !== "all") {
+          posts = posts.filter(p => p.category === this.currentFilter);
+        }
+
+        container.innerHTML = posts.map(p => `
           <div style="background:var(--bg-card); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); margin-bottom:14px;">
-            <div style="font-weight:700; color:var(--neon-pink); margin-bottom:6px;">@VelvetQueen in Hotwife Lifestyle</div>
-            <p style="font-size:0.95rem; line-height:1.6;">Our third date night this year was pure magic. My husband chose the backless emerald gown and sent me off with our favorite cocktail. Reclaiming me afterward was hotter than our wedding night.</p>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span style="font-weight:700; color:var(--text-main);">@${p.author}</span>
+              <span style="color:var(--neon-pink); font-size:0.75rem; font-weight:700;">${p.tag}</span>
+            </div>
+            <p style="font-size:0.95rem; line-height:1.6; color:#dcdce8;">${p.content}</p>
           </div>
-        `;
+        `).join('');
       }
 
       renderConfessions() {
@@ -1024,22 +1006,36 @@
       renderDaily() {
         const card = document.getElementById("dailyPollCard");
         card.innerHTML = `
-          <h3 style="font-family:var(--font-display); font-size:1.2rem; margin-bottom:14px;">"What was your single favorite part of living the lifestyle?"</h3>
+          <h3 style="font-family:var(--font-display); font-size:1.2rem; margin-bottom:14px;">"What is the most compelling aspect of being with an experienced Hotwife / MILF?"</h3>
           <button class="btn btn-secondary btn-sm" style="width:100%; justify-content:space-between; margin-bottom:8px;" onclick="alert('Voted!')">
-            <span>The intense marital compersion & reconnection</span>
-            <span>58%</span>
+            <span>Her unapologetic body confidence & maturity</span>
+            <span>64%</span>
           </button>
           <button class="btn btn-secondary btn-sm" style="width:100%; justify-content:space-between;" onclick="alert('Voted!')">
-            <span>The surge of female confidence & desire</span>
-            <span>42%</span>
+            <span>The thrill of her husband's compersion & blessing</span>
+            <span>36%</span>
           </button>
         `;
       }
 
       handleCreateSubmit(e) {
         e.preventDefault();
+        const cat = document.getElementById("createPostCategory").value;
+        const text = document.getElementById("createText").value.trim();
+        const user = localStorage.getItem("hwc_user") || "Lover_Guest";
+
+        SAMPLE_POSTS.unshift({
+          category: cat,
+          author: user,
+          tag: cat === "lover" ? "🐂 Bull Perspective" : "👑 Community Story",
+          content: text
+        });
+
+        document.getElementById("createText").value = "";
         this.closeModal("createModal");
-        this.showToast("Story shared with the community!");
+        this.renderPosts();
+        this.navigate("feed");
+        this.showToast("Your story has been posted!");
       }
     }
 
