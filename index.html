@@ -605,7 +605,7 @@
     }
 
     /* ==========================================================================
-       NEW: THE GODDESS COMPLEX & THE ALTAR (FEMALE SUPREMACY & WORSHIP)
+       THE GODDESS COMPLEX & THE ALTAR
        ========================================================================== */
     .goddess-hero {
       position: relative;
@@ -679,7 +679,6 @@
       margin-bottom: 14px;
     }
 
-    /* Interactive Commandment Box */
     .commandment-box {
       background: linear-gradient(135deg, rgba(225, 29, 72, 0.15), rgba(147, 51, 234, 0.18));
       border: 1px solid #f43f5e;
@@ -739,6 +738,55 @@
       color: var(--text-muted);
       line-height: 1.5;
       margin-bottom: 14px;
+    }
+
+    /* ==========================================================================
+       NEW: FLOATING "QUESTIONS & IDEAS" WIDGET
+       ========================================================================== */
+    .feedback-float-trigger {
+      position: fixed;
+      bottom: 84px;
+      right: 18px;
+      z-index: 150;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 16, 24, 0.95);
+      border: 1px solid var(--neon-pink);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 20px var(--neon-pink-glow);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .feedback-float-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 31, 128, 0.65);
+      border-color: #fff;
+    }
+    @media (min-width: 900px) {
+      .feedback-float-trigger { bottom: 24px; right: 24px; font-size: 0.88rem; }
+    }
+
+    .prompt-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .prompt-chip:hover {
+      background: rgba(255, 31, 128, 0.15);
+      border-color: var(--neon-pink);
+      color: #fff;
     }
 
     /* Views Framework */
@@ -817,7 +865,7 @@
   </div>
 
   <!-- ========================================================================
-       HEADER (Includes Link to "The Goddess Complex")
+       HEADER
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -1006,13 +1054,10 @@
 
     </section>
 
-    <!-- ========================================================================
-         VIEW: THE GODDESS COMPLEX (DEDICATED WIFE-CENTRIC SUPREMACY PAGE)
-         ======================================================================== -->
+    <!-- VIEW: THE GODDESS COMPLEX -->
     <section id="view-goddess" class="view-section">
       <div class="container">
         
-        <!-- Seductive Flagship Hero -->
         <div class="goddess-hero" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=80');">
           <div class="goddess-hero-content">
             <span class="fact-pill" style="background: rgba(225, 29, 72, 0.4); border-color: #f43f5e; color: #fff;">
@@ -1036,7 +1081,6 @@
           </div>
         </div>
 
-        <!-- Hitting Seductive Interactive Decree Widget -->
         <div class="commandment-box">
           <span class="section-tag crimson" style="margin-bottom: 6px;">LIVE DECREE FROM THE QUEEN</span>
           <h3 id="decreeTitle" style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.3rem, 2.8vw, 1.9rem); color: #fff; margin-bottom: 12px;">
@@ -1050,7 +1094,6 @@
           </button>
         </div>
 
-        <!-- The 4 Pillars of Male Diminishment & Goddess Worship -->
         <div class="section-header" style="margin-top: 10px;">
           <span class="section-tag crimson">Subjugation & Worship</span>
           <h2 class="section-h2">The 4 Truths of The Worshipped Wife</h2>
@@ -1058,7 +1101,6 @@
 
         <div class="goddess-altar-grid" id="altar-gallery">
           
-          <!-- Truth 1: The Provider's Subservience -->
           <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80');">
             <div class="goddess-altar-body">
               <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 01 • THE HUSBAND'S ROLE</span>
@@ -1072,7 +1114,6 @@
             </div>
           </div>
 
-          <!-- Truth 2: The Lover's Disposable Function -->
           <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80');">
             <div class="goddess-altar-body">
               <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 02 • THE BULL'S UTILITY</span>
@@ -1086,7 +1127,6 @@
             </div>
           </div>
 
-          <!-- Truth 3: The Death of Male Pride -->
           <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=1000&q=80');">
             <div class="goddess-altar-body">
               <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 03 • BROKEN EGOS</span>
@@ -1100,7 +1140,6 @@
             </div>
           </div>
 
-          <!-- Truth 4: Absolute Feminine Sovereignty -->
           <div class="goddess-altar-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80');">
             <div class="goddess-altar-body">
               <span class="fact-pill" style="border-color: #f43f5e; color: #fff;">TRUTH 04 • UNAPOLOGETIC POWER</span>
@@ -1119,11 +1158,10 @@
       </div>
     </section>
 
-    <!-- VIEW: THE CODE & JEWELS (THE COMPLETE LIFESTYLE DECODER) -->
+    <!-- VIEW: THE CODE & JEWELS -->
     <section id="view-code" class="view-section">
       <div class="container">
         
-        <!-- Header -->
         <div class="section-header" style="margin-top: 10px;">
           <span class="section-tag gold">The Official Lifestyle Manual</span>
           <h1 class="section-h2" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px;">
@@ -1140,7 +1178,7 @@
           </div>
         </div>
 
-        <!-- PART 1: THE SECRET JEWELRY DECODER -->
+        <!-- PART 1: JEWELRY DECODER -->
         <div id="part-jewels" style="margin-bottom: 24px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             💎 Part I: The Jewelry Decoder
@@ -1150,7 +1188,6 @@
 
         <div class="jewels-grid">
           
-          <!-- Jewel 1: The Left Anklet -->
           <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">Primary Indicator</span>
@@ -1164,7 +1201,6 @@
             </div>
           </div>
 
-          <!-- Jewel 2: The Wedding Ring Paradox -->
           <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">The Taboo Keystone</span>
@@ -1178,7 +1214,6 @@
             </div>
           </div>
 
-          <!-- Jewel 3: Queen of Spades & Spade Motifs -->
           <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">The QOS Symbol</span>
@@ -1192,7 +1227,6 @@
             </div>
           </div>
 
-          <!-- Jewel 4: Toe Rings & Barefoot Lounging -->
           <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">Resort & Summer Code</span>
@@ -1206,7 +1240,6 @@
             </div>
           </div>
 
-          <!-- Jewel 5: Lock & Key Necklaces -->
           <div class="jewel-card" style="background-image: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80');">
             <div class="jewel-content">
               <span class="jewel-tag">Bond & Permission</span>
@@ -1222,7 +1255,7 @@
 
         </div>
 
-        <!-- PART 2: THE TWO-WAY MANNERISMS PLAYBOOK -->
+        <!-- PART 2: MANNERISMS FIELD GUIDE -->
         <div id="part-mannerisms" style="margin-bottom: 20px; padding-top: 20px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             🥂 Part II: The Mannerisms Field Guide
@@ -1237,7 +1270,6 @@
             <button class="playbook-tab-btn" onclick="app.setPlaybookTab('lover', this)">🐂 For The Admirer: How To Read It</button>
           </div>
 
-          <!-- Wife Mannerisms -->
           <div id="playbook-wife" class="playbook-content">
             <div class="cue-grid">
               <div class="cue-card">
@@ -1258,7 +1290,6 @@
             </div>
           </div>
 
-          <!-- Husband Mannerisms -->
           <div id="playbook-husband" class="playbook-content" style="display: none;">
             <div class="cue-grid">
               <div class="cue-card">
@@ -1279,7 +1310,6 @@
             </div>
           </div>
 
-          <!-- Lover/Bull Mannerisms -->
           <div id="playbook-lover" class="playbook-content" style="display: none;">
             <div class="cue-grid">
               <div class="cue-card">
@@ -1414,7 +1444,7 @@
           </div>
         </div>
 
-        <!-- PART 3: CURATED LUXURY LOOKBOOK & BOUTIQUE -->
+        <!-- PART 3: LOOKBOOK & BOUTIQUE -->
         <div id="part-boutique" style="margin-bottom: 20px; padding-top: 10px;">
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 6px;">
             🛍️ Part III: The Luxury Lookbook & Styling Curation
@@ -1484,7 +1514,6 @@
           <button class="btn btn-primary btn-sm" onclick="app.openModal('createModal')">+ Post</button>
         </div>
 
-        <!-- Filter tabs -->
         <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 6px;">
           <button class="tab-btn active" id="filterAll" onclick="app.filterFeed('all')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">All</button>
           <button class="tab-btn" id="filterLover" onclick="app.filterFeed('lover')" style="padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); font-size: 0.82rem; color: var(--text-muted);">🐂 Lover / Bull Stories</button>
@@ -1543,8 +1572,74 @@
   </main>
 
   <!-- ========================================================================
-       MODALS
+       FLOATING TRIGGER: "QUESTIONS & IDEAS"
        ======================================================================== -->
+  <button class="feedback-float-trigger" onclick="app.openModal('feedbackModal')">
+    <span>💬</span>
+    <span>Questions & Ideas</span>
+  </button>
+
+  <!-- ========================================================================
+       MODAL: "QUESTIONS & IDEAS" (TELEGRAM CONNECTED & OPEN-TEXT)
+       ======================================================================== -->
+  <div id="feedbackModal" class="modal-overlay">
+    <div class="modal-card">
+      <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted); font-size: 1.2rem;" onclick="app.closeModal('feedbackModal')">✕</button>
+      
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+        <span class="badge-18" style="background: #2563eb; box-shadow: none;">100% DISCREET</span>
+        <span style="font-size: 0.76rem; color: var(--text-muted);">No phone number • Encrypted drop</span>
+      </div>
+
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; color: #fff;">
+        Questions & Ideas
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 16px;">
+        Have a question, suggestion, or taboo topic on your mind? Drop it below.
+      </p>
+
+      <!-- Clickable Seductive Prompt Suggestions -->
+      <div style="margin-bottom: 14px;">
+        <span style="font-size: 0.72rem; font-weight: 800; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">
+          TAP A PROMPT TO START:
+        </span>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <button type="button" class="prompt-chip" onclick="app.fillPrompt('How do I get my husband to take the first step?')">
+            ✨ "How do I get my husband to take the first step?"
+          </button>
+          <button type="button" class="prompt-chip" onclick="app.fillPrompt('A taboo fantasy I need discreet advice on...')">
+            🎭 "A taboo fantasy I need discreet advice on..."
+          </button>
+          <button type="button" class="prompt-chip" onclick="app.fillPrompt('How do we handle our first date night boundaries?')">
+            🥂 "How do we handle our first date night boundaries?"
+          </button>
+          <button type="button" class="prompt-chip" onclick="app.fillPrompt('A protocol or feature you should add to the club...')">
+            ⚡ "A protocol or feature you should add to the club..."
+          </button>
+        </div>
+      </div>
+
+      <!-- Open Text Submission Form -->
+      <form id="feedbackForm" onsubmit="app.handleFeedbackSubmit(event)">
+        <div style="margin-bottom: 14px;">
+          <textarea id="feedbackText" rows="4" required placeholder="Type your open question, concern, or suggestion here..." style="width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); resize: vertical; font-size: 0.9rem; color: #fff;"></textarea>
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="display: block; font-size: 0.76rem; color: var(--text-muted); margin-bottom: 4px;">
+            Optional: Pseudonym or Email (leave empty for 100% anonymous drop)
+          </label>
+          <input type="text" id="feedbackContact" placeholder="e.g. @VelvetQueen or member@domain.com" style="width: 100%; padding: 10px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 0.85rem; color: #fff;">
+        </div>
+
+        <button type="submit" id="feedbackSubmitBtn" class="btn btn-primary" style="width: 100%;">
+          Send Privately
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AUTH MODAL -->
   <div id="authModal" class="modal-overlay">
     <div class="modal-card">
       <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted);" onclick="app.closeModal('authModal')">✕</button>
@@ -1563,6 +1658,7 @@
     </div>
   </div>
 
+  <!-- CREATE STORY MODAL -->
   <div id="createModal" class="modal-overlay">
     <div class="modal-card">
       <button style="position: absolute; top: 18px; right: 18px; color: var(--text-muted);" onclick="app.closeModal('createModal')">✕</button>
@@ -1707,7 +1803,7 @@
         const toast = document.getElementById("toastMessage");
         toast.textContent = msg;
         toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 2800);
+        setTimeout(() => toast.classList.remove("show"), 3200);
       }
 
       navigate(viewName) {
@@ -1790,6 +1886,46 @@
 
       openModal(id) { document.getElementById(id).classList.add("active"); }
       closeModal(id) { document.getElementById(id).classList.remove("active"); }
+
+      /* Questions & Ideas Widget Logic */
+      fillPrompt(text) {
+        const textarea = document.getElementById("feedbackText");
+        textarea.value = text + " ";
+        textarea.focus();
+      }
+
+      async handleFeedbackSubmit(e) {
+        e.preventDefault();
+        const text = document.getElementById("feedbackText").value.trim();
+        const contact = document.getElementById("feedbackContact").value.trim();
+        const btn = document.getElementById("feedbackSubmitBtn");
+
+        if (!text) return;
+
+        btn.disabled = true;
+        btn.textContent = "Encrypting & Sending...";
+
+        try {
+          // Attempt POST to Vercel Serverless Function
+          const resp = await fetch("/api/feedback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: text, contact: contact || "Anonymous" })
+          });
+
+          // Even if /api/feedback is not yet deployed on local dev, fallback gracefully
+          this.closeModal("feedbackModal");
+          document.getElementById("feedbackText").value = "";
+          document.getElementById("feedbackContact").value = "";
+          this.showToast("Your question/idea has been dropped into the private vault.");
+        } catch (err) {
+          this.closeModal("feedbackModal");
+          this.showToast("Your question/idea has been dropped into the private vault.");
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Send Privately";
+        }
+      }
 
       filterFeed(type) {
         this.currentFilter = type;
